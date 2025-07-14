@@ -43,23 +43,33 @@
         </main>
     </div>
 
-    <div id="testimonials-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">آراء عملائنا الكرام</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="testimonials-grid"><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/L6gD0xj/review-placeholder-1.png" alt="رأي عميل ١"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/hckKx7F/review-placeholder-2.png" alt="رأي عميل ٢"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/y6P9q1H/review-placeholder-3.png" alt="رأي عميل ٣"></div></div></div></div><div id="watches-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">ساعات قيمة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="item-grid"><div class="item-card"><img src="https://i.ibb.co/31C6R9J/classic-gold-watch.jpg" alt="ساعة ذهبية"><div class="item-card-body"><h4>ساعة ذهبية كلاسيك</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة ذهبية كلاسيك')">أضف إلى السلة</button></div></div><div class="item-card"><img src="https://i.ibb.co/k5Cmqb5/black-leather-watch.jpg" alt="ساعة سوداء"><div class="item-card-body"><h4>ساعة جلد سوداء</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة جلد سوداء')">أضف إلى السلة</button></div></div></div></div></div><div id="printing-categories-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">اختر فئة الطباعة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="category-grid"><div class="category-card" onclick="showPage('maquettes-details-page')"><div class="icon"><i class="fas fa-puzzle-piece"></i></div><h4>ماكيتات خشبية</h4></div><div class="category-card" onclick="showPage('portraits-details-page')"><div class="icon"><i class="fas fa-portrait"></i></div><h4>بورتريهات</h4></div><div class="category-card" onclick="showPage('mugs-details-page')"><div class="icon"><i class="fas fa-mug-hot"></i></div><h4>مجات</h4></div><div class="category-card" onclick="showPage('wall-clocks-details-page')"><div class="icon"><i class="fas fa-clock"></i></div><h4>ساعات حائط</h4></div><div class="category-card" onclick="showPage('mirrors-details-page')"><div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div><h4>مرايا سحرية</h4></div><div class="category-card" onclick="showPage('notebooks-details-page')"><div class="icon"><i class="fas fa-book"></i></div><h4>نوت بوك</h4></div></div></div></div><div id="cart-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">إتمام الطلب</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="checkout-form">
-        <form id="checkout-form-element" method="POST">
-            <p style="text-align:center; font-size:1.1rem; margin-bottom:25px;">برجاء ملء بياناتك وسنتواصل معك لتأكيد الطلب وتفاصيل التوصيل.</p>
-            <label for="name"><i class="fas fa-user"></i> الاسم بالكامل:</label>
-            <input type="text" id="name" name="الاسم" required>
-            <label for="phone"><i class="fas fa-phone"></i> رقم الموبايل:</label>
-            <input type="tel" id="phone" name="رقم الموبايل" required>
-            <label for="address"><i class="fas fa-map-marker-alt"></i> العنوان بالتفصيل:</label>
-            <input type="text" id="address" name="العنوان" required placeholder="مثال: حدائق القبة، شارع ...، عمارة ...، شقة ...">
-            <label for="location-link"><i class="fas fa-map-pin"></i> رابط موقعك على الخريطة (اختياري):</label>
-            <input type="url" id="location-link" name="رابط الموقع" placeholder="انسخ رابط موقعك من خرائط جوجل هنا">
-            <label for="order-details"><i class="fas fa-gift"></i> المنتجات المطلوبة:</label>
-            <textarea id="order-details" name="المنتجات المطلوبة" placeholder="المنتجات التي اخترتها ستظهر هنا تلقائياً..." required readonly></textarea>
-            <div class="form-instructions"><i class="fab fa-whatsapp"></i><strong>مهم جداً:</strong> بعد تأكيد الطلب، يرجى إرسال الصور التي تريد طباعتها على رقم الواتساب الخاص بنا: <strong>01158348396</strong> مع ذكر اسمك.</div>
-            <button type="submit" class="cta-button" style="width: 100%;"><i class="fas fa-check-circle"></i> تأكيد الطلب الآن</button>
-        </form>
-    </div></div></div>
+    <div id="testimonials-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">آراء عملائنا الكرام</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="testimonials-grid"><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/L6gD0xj/review-placeholder-1.png" alt="رأي عميل ١"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/hckKx7F/review-placeholder-2.png" alt="رأي عميل ٢"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/y6P9q1H/review-placeholder-3.png" alt="رأي عميل ٣"></div></div></div></div><div id="watches-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">ساعات قيمة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="item-grid"><div class="item-card"><img src="https://i.ibb.co/31C6R9J/classic-gold-watch.jpg" alt="ساعة ذهبية"><div class="item-card-body"><h4>ساعة ذهبية كلاسيك</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة ذهبية كلاسيك')">أضف إلى السلة</button></div></div><div class="item-card"><img src="https://i.ibb.co/k5Cmqb5/black-leather-watch.jpg" alt="ساعة سوداء"><div class="item-card-body"><h4>ساعة جلد سوداء</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة جلد سوداء')">أضف إلى السلة</button></div></div></div></div></div><div id="printing-categories-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">اختر فئة الطباعة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="category-grid"><div class="category-card" onclick="showPage('maquettes-details-page')"><div class="icon"><i class="fas fa-puzzle-piece"></i></div><h4>ماكيتات خشبية</h4></div><div class="category-card" onclick="showPage('portraits-details-page')"><div class="icon"><i class="fas fa-portrait"></i></div><h4>بورتريهات</h4></div><div class="category-card" onclick="showPage('mugs-details-page')"><div class="icon"><i class="fas fa-mug-hot"></i></div><h4>مجات</h4></div><div class="category-card" onclick="showPage('wall-clocks-details-page')"><div class="icon"><i class="fas fa-clock"></i></div><h4>ساعات حائط</h4></div><div class="category-card" onclick="showPage('mirrors-details-page')"><div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div><h4>مرايا سحرية</h4></div><div class="category-card" onclick="showPage('notebooks-details-page')"><div class="icon"><i class="fas fa-book"></i></div><h4>نوت بوك</h4></div></div></div></div>
+    
+    <div id="cart-page" class="page-view">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="section-title" style="margin-bottom: 0;">إتمام الطلب</h2>
+                <button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button>
+            </div>
+            <div class="checkout-form">
+                <form id="checkout-form-element" method="POST">
+                    <p style="text-align:center; font-size:1.1rem; margin-bottom:25px;">برجاء ملء بياناتك وسنتواصل معك لتأكيد الطلب وتفاصيل التوصيل.</p>
+                    <label for="name"><i class="fas fa-user"></i> الاسم بالكامل:</label>
+                    <input type="text" id="name" name="الاسم" required>
+                    <label for="phone"><i class="fas fa-phone"></i> رقم الموبايل:</label>
+                    <input type="tel" id="phone" name="رقم الموبايل" required>
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> العنوان بالتفصيل:</label>
+                    <input type="text" id="address" name="العنوان" required placeholder="مثال: حدائق القبة، شارع ...، عمارة ...، شقة ...">
+                    <label for="location-link"><i class="fas fa-map-pin"></i> رابط موقعك على الخريطة (اختياري):</label>
+                    <input type="url" id="location-link" name="رابط الموقع" placeholder="انسخ رابط موقعك من خرائط جوجل هنا">
+                    <label for="order-details"><i class="fas fa-gift"></i> المنتجات المطلوبة:</label>
+                    <textarea id="order-details" name="المنتجات المطلوبة" placeholder="المنتجات التي اخترتها ستظهر هنا تلقائياً..." required readonly></textarea>
+                    <div class="form-instructions"><i class="fab fa-whatsapp"></i><strong>مهم جداً:</strong> بعد تأكيد الطلب، يرجى إرسال الصور التي تريد طباعتها على رقم الواتساب الخاص بنا: <strong>01158348396</strong> مع ذكر اسمك.</div>
+                    <button type="submit" class="cta-button" style="width: 100%;"><i class="fas fa-check-circle"></i> تأكيد الطلب الآن</button>
+                </form>
+            </div>
+        </div>
+    </div>
     
     <footer id="footer"><div class="container"><p>جميع الحقوق محفوظة © 2025 - Enjoy The Gifts</p></div></footer>
     <div id="toast" class="toast-notification">تمت الإضافة بنجاح!</div>
@@ -144,13 +154,13 @@
         const form = document.getElementById('checkout-form-element');
         form.addEventListener("submit", function handleSubmit(event) {
             event.preventDefault();
-            if (cartItems.length === 0) {
+            if (cartItems.length === 0 && !document.getElementById('order-details').value) {
                 alert('سلة التسوق فارغة!');
                 return;
             }
             
-            // تم وضع الرابط الخاص بك هنا بنجاح
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzqM339z57KfNfLvNLphh7G4H3bOeluG10FdeSnyAl08BDAOribmWY6tzB-7GTWLy0G/exec';
+            // --- تم تحديث الرابط بنجاح ---
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxvPzOa6paLV2sHRHRGmJhYrt5eO6bM3YNNI7vOoHMTBiUehWSZzWUi0vA2QIdWzTU/exec';
 
             const submitButton = form.querySelector('button[type="submit"]');
             const data = new FormData(form);
