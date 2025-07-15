@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enjoy The Gifts</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23c5a47e' d='M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-4.1c23.2-25.2 36.1-57.9 36.1-92.5C512 56 466.1 9.7 408 0c-45.9 7.7-82.8 42.6-96.3 86.4c-13.4-43.8-50.4-78.7-96.3-86.4C157.9 9.7 112 56 112 123.5c0 34.6 12.9 67.3 36.1 92.5H128V288h384V160zM256 64c26.5 0 48 21.5 48 48s-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48z'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23c5a47e' d='M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-4.1c23.2-25.2 36.1-57.9 36.1-92.5C512 56 466.1 9.7 408 0c-45.9 7.7-82.8 42.6-96.3 86.4c-13.4-43.8-50.4-78.7-96.3-86.4C157.9 9.7 112 56 112 123.5c0 34.6 12.9 67.3 36.1 92.5H32V192h160V32H32v160zm256 0V32h160v160h-160z'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
@@ -118,7 +118,7 @@
                 font-size: 1.8rem;
             }
             .offer-details p {
-                font-size: 1rem;
+                font-size: 1.0rem;
                 margin: 10px 0 20px;
             }
             .offer-pricing .new-price {
@@ -157,14 +157,14 @@
                 width: 100%;
             }
             .contact-info p {
-                font-size: 1rem;
+                font-size: 1.0rem;
                 margin-bottom: 15px;
             }
             .contact-info i {
                 font-size: 1.1rem;
             }
             .social-media a {
-                font-size: 2rem;
+                font-size: 2.0rem;
                 margin: 0 10px;
             }
             .map iframe {
@@ -193,7 +193,7 @@
                 padding: 25px;
             }
             .checkout-form label {
-                font-size: 1rem;
+                font-size: 1.0rem;
             }
             .checkout-form input, .checkout-form textarea, .checkout-form select {
                 padding: 10px;
@@ -221,7 +221,7 @@
                 font-size: 1.6rem;
             }
             .modal-content p {
-                font-size: 1rem;
+                font-size: 1.0rem;
                 margin-bottom: 20px;
             }
             .modal-content .close-button {
@@ -296,72 +296,68 @@
             margin-bottom: 20px; /* Ensure consistent spacing */
         }
 
-        /* Cart Items List Styles */
-        .cart-items-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            padding: 15px;
-            background-color: var(--white-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        /* New styles for the selected products display */
+        .selected-products-display {
+            /* Removed border, background, shadow to make it blend in */
+            padding: 0; /* No padding on container, items will have their own */
+            min-height: 80px; /* To give it some height even when empty */
+            margin-bottom: 20px;
         }
 
-        .cart-item {
+        .selected-product-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px dashed var(--light-gray);
-            font-size: 1.1rem;
+            padding: 12px 0; /* Increased vertical padding for better spacing */
+            border-bottom: 1px dashed #ddd; /* Slightly darker dashed separator */
+            font-size: 1.1rem; /* Slightly larger font for clarity */
             color: var(--text-color);
+            transition: background-color 0.2s ease; /* Smooth hover effect */
         }
-
-        .cart-item:last-child {
+        .selected-product-item:last-child {
             border-bottom: none;
         }
+        .selected-product-item:hover {
+            background-color: var(--light-gray); /* Light background on hover */
+        }
 
-        .cart-item-name {
-            font-weight: 700;
+        .item-name {
             flex-grow: 1;
+            font-weight: 700; /* Bolder for better readability */
+            color: var(--secondary-color); /* Stronger color */
         }
 
-        .cart-item-price {
-            color: var(--primary-color);
-            margin-left: 15px;
-            font-weight: bold;
+        .item-price-red {
+            color: var(--danger-color); /* Red color for price */
+            font-weight: 900; /* Even bolder for emphasis */
+            font-size: 1.2rem; /* Larger price font */
+            margin-left: 20px; /* More space between name and price */
+            white-space: nowrap; /* Prevent price from wrapping */
         }
 
-        .remove-item-btn {
+        .remove-product-btn {
             background: none;
             border: none;
-            color: var(--danger-color);
-            font-size: 1.3rem;
+            color: #a0aec0; /* Lighter gray for X */
+            font-size: 1rem; /* Small size for X */
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-            padding: 5px; /* Make it easier to click */
+            padding: 5px; /* More padding for easier click */
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            margin-right: 0; /* Remove right margin */
+        }
+        .remove-product-btn:hover {
+            color: var(--danger-color); /* Red on hover */
+            background-color: #fbd38d; /* Soft yellow/orange background on hover for contrast */
         }
 
-        .remove-item-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive adjustments for cart items */
-        @media (max-width: 768px) {
-            .cart-item {
-                flex-wrap: wrap; /* Allow items to wrap */
-                justify-content: center;
-                text-align: center;
-            }
-            .cart-item-name, .cart-item-price {
-                width: 100%;
-                margin-bottom: 5px;
-                margin-left: 0;
-            }
-            .remove-item-btn {
-                margin-top: 5px;
-            }
+        .empty-products-message {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            padding: 15px;
+            border: 1px dashed var(--light-gray); /* Keep dashed border for empty state */
+            border-radius: 8px; /* Keep rounded corners for empty state */
         }
     </style>
 </head>
@@ -388,9 +384,7 @@
             <section class="hero"><div class="hero-content"><h1>أجمل الهدايا <span>لأغلى الناس</span></h1><p>في Enjoy The Gifts، نصنع كل هدية بحب لتصل مشاعرك بأفضل صورة.</p><a href="#products" class="cta-button">اكتشف منتجاتنا</a></div></section>
             <section id="gift-finder-tool"><div class="container"><div class="finder-wrapper"><h4>محتار في اختيار الهدية؟ دعنا نساعدك!</h4><div class="finder-controls"><div class="finder-select-wrapper"><i class="fas fa-user"></i><select id="gift-recipient"><option value="any">لمن الهدية؟</option><option value="for-her">لها</option><option value="for-him">له</option></select></div><div class="finder-select-wrapper"><i class="fas fa-calendar-alt"></i><select id="gift-occasion"><option value="any">ما المناسبة؟</option><option value="birthday">عيد ميلاد</option><option value="anniversary">ذكرى سنوية</option><option value="congrats">تهنئة</option></select></div><div class="finder-select-wrapper"><i class="fas fa-wallet"></i><select id="gift-budget"><option value="any">الميزانية؟</option><option value="low">أقل من 250</option><option value="medium">250 - 450</option><option value="high">أكثر من 450</option></select></div><button id="find-gift-btn"><i class="fas fa-search" style="margin-left: 8px;"></i> ابحث عن هدية</button></div></div></div></section>
             <section id="products" class="section"><div class="container"><h2 class="section-title">ما نقدمه</h2><div class="products-grid"><div class="product-card" onclick="showPage('printing-categories-page')"><div class="icon"><i class="fas fa-print"></i></div><h3>ركن الطباعة</h3><p>صمم منتجك الخاص بصورتك وتصميمك.</p></div><div class="product-card" onclick="showPage('gifts-page')"><div class="icon"><i class="fas fa-gift"></i></div><h3>هدايا وتغليف</h3><p>هدايا مميزة مع خدمة تغليف احترافية.</p></div><div class="product-card" onclick="showPage('teddy-bears-page')"><div class="icon"><i class="fas fa-child-reaching"></i></div><h3>دباديب وألعاب</h3><p>أحلى الدباديب التي تدخل الفرحة لقلوبكم.</p></div><div class="product-card" onclick="showPage('flowers-page')"><div class="icon"><i class="fas fa-fan"></i></div><h3>بوكيهات ورد</h3><p>بوكيهات ورد فريدة لكل المناسبات.</p></div><div class="product-card" onclick="showPage('watches-page')"><div class="icon"><i class="fas fa-clock"></i></div><h3>ساعات قيمة</h3><p>تشكيلة أنيقة تناسب كل الأذواق.</p></div><div class="product-card" onclick="showPage('perfumes-page')"><div class="icon"><i class="fas fa-spray-can-sparkles"></i></div><h3>عطور وروائح</h3><p>عطور فريدة تترك انطباعًا لا يُنسى.</p></div></div></div></section>
-            <section id="weekly-offer" class="section"><div class="container"><h2 class="section-title">عرض خاص لفترة محدودة!</h2><div class="offer-container"><div class="offer-image"><img src="https://i.ibb.co/dKSmVbN/offer-mockup.png" alt="عرض الأسبوع"></div><div class="offer-details"><h3>عرض التوفير: ماكيت + مج</h3><p>اطلب الآن ماكيت خشبي مطبوع من اختيارك مع مج سحري، واحصل على الاثنين معًا بسعر لا يصدق. هدية مثالية تجمع بين الذكرى والاستخدام اليومي!</p><div class="offer-pricing"><span class="new-price">فقط بـ 280 جنيه!</span><span class="old-price">بدلاً من 350 جنيه</span></div><button id="weekly-offer-btn" class="cta-button" onclick="addToCart(this, 'عرض الأسبوع (ماكيت + مج)', 280)" data-item-name="عرض الأسبوع (ماكيت + مج)">
-                <i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة
-            </button></div></div></div></section>
+            <section id="weekly-offer" class="section"><div class="container"><h2 class="section-title">عرض خاص لفترة محدودة!</h2><div class="offer-container"><div class="offer-image"><img src="https://i.ibb.co/dKSmVbN/offer-mockup.png" alt="عرض الأسبوع"></div><div class="offer-details"><h3>عرض التوفير: ماكيت + مج</h3><p>اطلب الآن ماكيت خشبي مطبوع من اختيارك مع مج سحري، واحصل على الاثنين معًا بسعر لا يصدق. هدية مثالية تجمع بين الذكرى والاستخدام اليومي!</p><div class="offer-pricing"><span class="new-price">فقط بـ 280 جنيه!</span><span class="old-price">بدلاً من 350 جنيه</span></div><button id="weekly-offer-btn" class="cta-button" onclick="addToCart(this, 'عرض الأسبوع (ماكيت + مج)', 280)"><i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة</button></div></div></div></section>
             <section id="why-us" class="section"><div class="container why-us-compact-container"><h2 class="section-title">لماذا تختار Enjoy The Gifts؟</h2><ul><li><i class="fas fa-gem"></i> أجود الخامات وأفضل الأسعار</li><li><i class="fas fa-shield-alt"></i> طبقة حماية للصور والماكيتات</li><li><i class="fas fa-hand-holding-heart"></i> ضمان رضا العميل</li><li><i class="fas fa-lock"></i> خصوصيتك أولويتنا</li></ul></div></section>
             <section id="testimonials-cta" class="section"><div class="container"><h2 class="section-title">نفخر بثقتكم!</h2><p style="text-align:center; max-width: 600px; margin: 30px auto 40px;">آراء عملائنا هي شهادة نعتز بها، وهي دافعنا لنقدم الأفضل دائمًا. شاهد ما قاله عملاؤنا عنا.</p><div style="text-align: center;"><button class="cta-button" onclick="showPage('testimonials-page')">شاهد كل الآراء</button></div></div></section>
             <section id="contact" class="section"><div class="container"><h2 class="section-title">تواصل معنا</h2><div class="contact-wrapper"><div class="contact-info"><h3>زورنا أو كلمنا</h3><p><i class="fas fa-map-marker-alt"></i> <strong>العنوان:</strong> القاهرة، حدائق القبة، خلف قسم شرطة حدائق القبة.</p><p><i class="fas fa-phone"></i> <strong>رقم الموبايل:</strong> <a href="tel:01158348396">01158348396</a></p><p><i class="fas fa-user"></i> <strong>صاحب المحل:</strong> مصطفى عبد الله</p><h4>تابع كل جديد هنا!</h4><div class="social-media">
@@ -401,16 +395,12 @@
         </main>
     </div>
 
-    <div id="testimonials-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">آراء عملائنا الكرام</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="testimonials-grid"><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/L6gD0xj/review-placeholder-1.png" alt="رأي عميل ١"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/hckKx7F/review-placeholder-2.png" alt="رأي عميل ٢"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/y6P9q1H/review-placeholder-3.png" alt="رأي عميل ٣"></div></div></div></div><div id="watches-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">ساعات قيمة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="item-grid"><div class="item-card"><img src="https://i.ibb.co/31C6R9J/classic-gold-watch.jpg" alt="ساعة ذهبية"><div class="item-card-body"><h4>ساعة ذهبية كلاسيك</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة ذهبية كلاسيك', 450)" data-item-name="ساعة ذهبية كلاسيك">
-                أضف إلى السلة
-            </button></div></div><div class="item-card"><img src="https://i.ibb.co/k5Cmqb5/black-leather-watch.jpg" alt="ساعة سوداء"><div class="item-card-body"><h4>ساعة جلد سوداء</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة جلد سوداء', 400)" data-item-name="ساعة جلد سوداء">
-                أضف إلى السلة
-            </button></div></div></div></div></div><div id="printing-categories-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">اختر فئة الطباعة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="category-grid"><div class="category-card" onclick="showPage('maquettes-details-page')"><div class="icon"><i class="fas fa-puzzle-piece"></i></div><h4>ماكيتات خشبية</h4></div><div class="category-card" onclick="showPage('portraits-details-page')"><div class="icon"><i class="fas fa-portrait"></i></div><h4>بورتريهات</h4></div><div class="category-card" onclick="showPage('mugs-details-page')"><div class="icon"><i class="fas fa-mug-hot"></i></div><h4>مجات</h4></div><div class="category-card" onclick="showPage('wall-clocks-details-page')"><div class="icon"><i class="fas fa-clock"></i></div><h4>ساعات حائط</h4></div><div class="category-card" onclick="showPage('mirrors-details-page')"><div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div><h4>مرايا سحرية</h4></div><div class="category-card" onclick="showPage('notebooks-details-page')"><div class="icon"><i class="fas fa-book"></i></div><h4>نوت بوك</h4></div></div></div></div>
+    <div id="testimonials-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">آراء عملائنا الكرام</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="testimonials-grid"><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/L6gD0xj/review-placeholder-1.png" alt="رأي عميل ١"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/hckKx7F/review-placeholder-2.png" alt="رأي عميل ٢"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/y6P9q1H/review-placeholder-3.png" alt="رأي عميل ٣"></div></div></div></div><div id="watches-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">ساعات قيمة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="item-grid"><div class="item-card"><img src="https://i.ibb.co/31C6R9J/classic-gold-watch.jpg" alt="ساعة ذهبية"><div class="item-card-body"><h4>ساعة ذهبية كلاسيك</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة ذهبية كلاسيك', 450)">أضف إلى السلة</button></div></div><div class="item-card"><img src="https://i.ibb.co/k5Cmqb5/black-leather-watch.jpg" alt="ساعة سوداء"><div class="item-card-body"><h4>ساعة جلد سوداء</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة جلد سوداء', 400)">أضف إلى السلة</button></div></div></div></div></div><div id="printing-categories-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">اختر فئة الطباعة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="category-grid"><div class="category-card" onclick="showPage('maquettes-details-page')"><div class="icon"><i class="fas fa-puzzle-piece"></i></div><h4>ماكيتات خشبية</h4></div><div class="category-card" onclick="showPage('portraits-details-page')"><div class="icon"><i class="fas fa-portrait"></i></div><h4>بورتريهات</h4></div><div class="category-card" onclick="showPage('mugs-details-page')"><div class="icon"><i class="fas fa-mug-hot"></i></div><h4>مجات</h4></div><div class="category-card" onclick="showPage('wall-clocks-details-page')"><div class="icon"><i class="fas fa-clock"></i></div><h4>ساعات حائط</h4></div><div class="category-card" onclick="showPage('mirrors-details-page')"><div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div><h4>مرايا سحرية</h4></div><div class="category-card" onclick="showPage('notebooks-details-page')"><div class="icon"><i class="fas fa-book"></i></div><h4>نوت بوك</h4></div></div></div></div>
     
     <div id="cart-page" class="page-view">
         <div class="container">
             <div class="page-header">
-                <h2 class="section-title" style="margin-bottom: 0;">إتمام الطلب</h2>
+                <h2 class="section-title" style="margin-bottom: 0;">سلة التسوق وإتمام الطلب</h2>
                 <button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button>
             </div>
             <div class="checkout-form">
@@ -422,15 +412,15 @@
                     <label for="phone"><i class="fas fa-phone"></i> رقم الموبايل:</label>
                     <input type="tel" id="phone" name="رقم الموبايل" required>
                     
-                    <!-- عرض المنتجات في السلة هنا -->
+                    <!-- New: Products display moved here -->
                     <label><i class="fas fa-gift"></i> المنتجات المطلوبة:</label>
-                    <div id="cart-items-display" class="cart-items-list">
+                    <div id="selected-products-display" class="selected-products-display">
                         <!-- Cart items will be rendered here by JavaScript -->
-                        <p style="text-align: center; color: #7f8c8d; font-size: 1.1rem; padding: 20px;">سلة التسوق فارغة حالياً.</p>
+                        <div id="empty-products-message" class="empty-products-message">لا توجد منتجات في السلة.</div>
                     </div>
-
-                    <!-- حقل المنتجات المطلوبة المخفي لإرسال البيانات -->
-                    <input type="hidden" id="order-details-hidden" name="المنتجات المطلوبة">
+                    <!-- Hidden textarea for form submission -->
+                    <textarea id="order-details-hidden" name="المنتجات المطلوبة" style="display:none;" required readonly></textarea>
+                    <!-- End of moved section -->
 
                     <label for="address"><i class="fas fa-map-marker-alt"></i> العنوان بالتفصيل:</label>
                     <input type="text" id="address" name="العنوان" required placeholder="مثال: حدائق القبة، شارع ...، عمارة ...، شقة ...">
@@ -438,10 +428,10 @@
                     <input type="url" id="location-link" name="رابط الموقع" placeholder="انسخ رابط موقعك من خرائط جوجل هنا">
                     
                     <label for="governorate-select"><i class="fas fa-building"></i> اختر المحافظة:</label>
-                    <select id="governorate-select" class="modern-select" onchange="populateDeliveryMethods()" name="المحافظة" required>
+                    <select id="governorate-select" class="modern-select" onchange="populateDeliveryMethods()" required>
                         <option value="" disabled selected>-- اختر المحافظة --</option>
-                        <option value="القاهرة والجيزة">القاهرة والجيزة</option>
-                        <option value="باقي المحافظات">باقي المحافظات</option>
+                        <option value="cairo_giza">القاهرة والجيزة</option>
+                        <option value="other_governorates">باقي المحافظات</option>
                     </select>
 
                     <!-- مربع مدة التوصيل الديناميكي والمزين -->
@@ -455,8 +445,6 @@
                         <option value="" disabled selected>-- اختر طريقة التوصيل --</option>
                     </select>
 
-                    <!-- تم تعديل اسم هذا الحقل ليتطابق مع السكريبت -->
-                    <input type="hidden" id="delivery-cost-hidden" name="سعر التوصيل" value="0">
                     <input type="hidden" id="products-price-hidden" name="سعر المنتجات">
                     <input type="hidden" id="total-price-hidden" name="التكلفة الإجمالية">
                     
@@ -480,14 +468,17 @@
     <div id="suggestion-modal" class="modal-overlay"><div class="modal-content"><div class="icon"><i class="fas fa-lightbulb"></i></div><h2>اقتراحنا لك!</h2><p id="suggestion-text"></p><button class="close-button" onclick="closeSuggestionModal()">حسنًا، فهمت</button></div></div>
 
     <script>
-        let cartItems = [];
+        let cartItems = []; // Array to store { name, price, originalButton }
         let productsPrice = 0;
         const mainContent = document.getElementById('main-content');
         const footer = document.getElementById('footer');
         const cartCountSpan = document.getElementById('cart-count');
-        const orderDetailsHiddenInput = document.getElementById('order-details-hidden'); // Changed from textarea
-        const cartItemsDisplay = document.getElementById('cart-items-display'); // New element for displaying items
         
+        // Updated references for the new cart display structure
+        const orderDetailsHiddenTextarea = document.getElementById('order-details-hidden');
+        const selectedProductsDisplay = document.getElementById('selected-products-display');
+        const emptyProductsMessage = document.getElementById('empty-products-message');
+
         const governorateSelect = document.getElementById('governorate-select');
         const deliveryMethodSelect = document.getElementById('delivery-method-select');
         const deliveryMethodLabel = document.getElementById('delivery-method-label');
@@ -496,11 +487,11 @@
 
         // Define all delivery options and their costs
         const deliveryOptionsData = {
-            "القاهرة والجيزة": [ // Changed value to match select option
-                { text: 'توصيل للمنزل (60 جنيه)', value: 'توصيل للمنزل', cost: 60 },
-                { text: 'أقرب محطة مترو (40 جنيه)', value: 'أقرب محطة مترو', cost: 40 }
+            cairo_giza: [
+                { text: 'توصيل للمنزل (60 جنيه)', value: 'القاهرة والجيزة - توصيل للمنزل', cost: 60 },
+                { text: 'أقرب محطة مترو (40 جنيه)', value: 'القاهرة والجيزة - أقرب محطة مترو', cost: 40 }
             ],
-            "باقي المحافظات": [ // Changed value to match select option
+            other_governorates: [
                 { text: 'الإسكندرية: 90 جنيه', value: 'الإسكندرية', cost: 90 },
                 { text: 'القليوبية: 90 جنيه', value: 'القليوبية', cost: 90 },
                 { text: 'البحيرة: 90 جنيه', value: 'البحيرة', cost: 90 },
@@ -539,7 +530,6 @@
             initImageLightbox();
             initGiftFinder();
             // No initial call to populateDeliveryMethods here, as it should be triggered by user selection
-            renderCartItems(); // Initial render of cart items (will show empty message)
         });
 
         function createPlaceholderPage(id, backButtonText, backFunction) {
@@ -564,7 +554,7 @@
                 activePage.style.display = 'block';
                 window.scrollTo(0, 0);
                 if (pageId === 'cart-page') {
-                    updateCartDetails(); // Update cart details and render when showing cart page
+                    updateCartDetails(); // Update cart details (and render items) when showing cart page
                 }
             }
         }
@@ -581,73 +571,77 @@
             }
         }
         
+        // Updates the cart count, hidden products price, and the hidden textarea for form submission
         function updateCartDetails() {
             cartCountSpan.innerText = cartItems.length;
             productsPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
-            // Update the hidden input for form submission
-            orderDetailsHiddenInput.value = cartItems.map(item => item.name).join('، ');
-            document.getElementById('products-price-hidden').value = productsPrice;
-            
-            renderCartItems(); // Re-render the displayed cart items
-            updateTotal(); // Update total price whenever cart changes
+            // Update the hidden textarea for form submission
+            if(orderDetailsHiddenTextarea) {
+                orderDetailsHiddenTextarea.value = cartItems.map(item => `${item.name} (${item.price} جنيه)`).join('\n'); // Use newline for vertical display in sheet
+                document.getElementById('products-price-hidden').value = productsPrice;
+                updateTotal(); // Update total price whenever cart changes
+            }
+
+            // Call renderCartItems to update the visual display
+            renderCartItems();
         }
 
+        // Adds an item to the cart
         function addToCart(button, itemName, itemPrice) {
+            // Check if item already exists in cart
             if (cartItems.some(item => item.name === itemName)) {
                 alert("هذا المنتج موجود بالفعل في السلة!");
                 return;
             }
-            cartItems.push({ name: itemName, price: Number(itemPrice) });
-            updateCartDetails();
+            // Add item with its original button reference
+            cartItems.push({ name: itemName, price: Number(itemPrice), originalButton: button });
+            updateCartDetails(); // This will also call renderCartItems()
             const toast = document.getElementById('toast');
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 2500);
             button.innerHTML = '<i class="fas fa-check" style="margin-left: 8px;"></i> تمت الإضافة';
             button.disabled = true;
-            button.setAttribute('data-item-added', 'true'); // Mark button as added
         }
 
-        function removeItem(itemName) {
-            cartItems = cartItems.filter(item => item.name !== itemName);
-            
-            // Re-enable the "Add to Cart" button for this item
-            document.querySelectorAll('.add-to-cart-btn, #weekly-offer-btn').forEach(button => {
-                // Check if the button corresponds to the removed item
-                if (button.getAttribute('data-item-name') === itemName) {
-                    button.disabled = false;
-                    button.removeAttribute('data-item-added'); // Remove added flag
-                    if (button.id === 'weekly-offer-btn') {
-                        button.innerHTML = '<i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة';
-                    } else {
-                        button.innerHTML = 'أضف إلى السلة';
-                    }
-                }
-            });
-
-            updateCartDetails(); // Update cart display and total
-        }
-
+        // Renders items in the cart display area
         function renderCartItems() {
-            cartItemsDisplay.innerHTML = ''; // Clear previous items
+            selectedProductsDisplay.innerHTML = ''; // Clear current display
 
             if (cartItems.length === 0) {
-                cartItemsDisplay.innerHTML = '<p style="text-align: center; color: #7f8c8d; font-size: 1.1rem; padding: 20px;">سلة التسوق فارغة حالياً.</p>';
-                return;
+                emptyProductsMessage.style.display = 'block';
+                // No padding on selectedProductsDisplay itself, empty message has its own padding
+            } else {
+                emptyProductsMessage.style.display = 'none';
             }
 
-            cartItems.forEach(item => {
+            cartItems.forEach((item, index) => {
                 const itemDiv = document.createElement('div');
-                itemDiv.classList.add('cart-item');
+                itemDiv.className = 'selected-product-item';
                 itemDiv.innerHTML = `
-                    <span class="cart-item-name">${item.name}</span>
-                    <span class="cart-item-price">${item.price} جنيه</span>
-                    <button class="remove-item-btn" onclick="removeItem('${item.name}')">
-                        <i class="fas fa-times-circle"></i>
+                    <span class="item-name">${item.name}</span>
+                    <span class="item-price-red">${item.price} جنيه</span>
+                    <button class="remove-product-btn" onclick="removeFromCart(${index})">
+                        <i class="fas fa-times"></i>
                     </button>
                 `;
-                cartItemsDisplay.appendChild(itemDiv);
+                selectedProductsDisplay.appendChild(itemDiv);
             });
+        }
+
+        // Removes an item from the cart
+        function removeFromCart(index) {
+            const removedItem = cartItems.splice(index, 1)[0]; // Remove item and get its reference
+            if (removedItem && removedItem.originalButton) {
+                // Reset the original button's state
+                removedItem.originalButton.disabled = false;
+                if (removedItem.originalButton.id === 'weekly-offer-btn') {
+                    removedItem.originalButton.innerHTML = '<i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة';
+                } else {
+                    removedItem.originalButton.innerHTML = 'أضف إلى السلة';
+                }
+            }
+            updateCartDetails(); // This will also call renderCartItems()
         }
         
         function populateDeliveryMethods() {
@@ -660,7 +654,6 @@
             deliveryMethodSelect.style.display = 'none';
             deliveryMethodLabel.style.display = 'none';
             deliveryMethodSelect.removeAttribute('required'); // Remove required until populated
-            deliveryMethodSelect.removeAttribute('name'); // <--- NEW: Remove name when hidden
 
             if (selectedGovernorate) {
                 const options = deliveryOptionsData[selectedGovernorate];
@@ -675,24 +668,18 @@
                     deliveryMethodSelect.style.display = 'block'; // Show method select
                     deliveryMethodLabel.style.display = 'block'; // Show method label
                     deliveryMethodSelect.setAttribute('required', 'required'); // Set required
-                    deliveryMethodSelect.name = 'نوع التوصيل'; // <--- NEW: Set name when visible
                 }
 
                 // Display delivery notes with animation
-                if (selectedGovernorate === 'القاهرة والجيزة') {
-                    deliveryNotesText.innerHTML = '<strong>مدة التوصيل:</strong> خلال يوم أو يومين عمل.';
+                if (selectedGovernorate === 'cairo_giza') {
+                    deliveryNotesText.innerHTML = '<strong>مدة التوصيل:</strong> خلال يوم أو يومين .';
                     deliveryNotesDiv.style.display = 'flex';
                     setTimeout(() => deliveryNotesDiv.classList.add('show'), 50); // Small delay for transition
-                } else if (selectedGovernorate === 'باقي المحافظات') {
-                    deliveryNotesText.innerHTML = '<strong>مدة الشحن:</strong> من 5 أيام لأسبوع عمل.';
+                } else if (selectedGovernorate === 'other_governorates') {
+                    deliveryNotesText.innerHTML = '<strong>مدة الشحن:</strong> من 5 أيام لأسبوع .';
                     deliveryNotesDiv.style.display = 'flex';
                     setTimeout(() => deliveryNotesDiv.classList.add('show'), 50); // Small delay for transition
                 }
-            } else { // <--- NEW: If no governorate selected, ensure delivery method is also reset
-                deliveryMethodSelect.style.display = 'none';
-                deliveryMethodLabel.style.display = 'none';
-                deliveryMethodSelect.removeAttribute('required');
-                deliveryMethodSelect.removeAttribute('name');
             }
             updateTotal(); // Recalculate total
         }
@@ -700,17 +687,14 @@
         function updateTotal() {
             let deliveryCost = 0;
             // Get delivery cost only if a method is selected and the select is visible
-            // Check if deliveryMethodSelect has a 'name' attribute, meaning it's active
-            if (deliveryMethodSelect.name === 'نوع التوصيل' && deliveryMethodSelect.value) {
+            if (deliveryMethodSelect.style.display === 'block' && deliveryMethodSelect.value) {
                 const selectedOption = deliveryMethodSelect.options[deliveryMethodSelect.selectedIndex];
                 deliveryCost = Number(selectedOption.dataset.cost) || 0;
             }
             
-            // Update the hidden input for form submission
-            document.getElementById('delivery-cost-hidden').value = deliveryCost;
-
             const totalPriceContainer = document.getElementById('total-price-container');
-            if (productsPrice > 0 || deliveryCost > 0) { // Show total if products exist or delivery cost is set
+            // Show total if products exist and province is selected
+            if (productsPrice > 0 && governorateSelect.value !== "") { 
                 const total = productsPrice + deliveryCost;
                 document.getElementById('total-price-value').textContent = total;
                 document.getElementById('total-price-hidden').value = total;
@@ -731,14 +715,13 @@
                 alert('الرجاء اختيار المحافظة أولاً.');
                 return;
             }
-            // Check if delivery method is selected only if the delivery method select is visible (has a name attribute)
-            if (governorateSelect.value && deliveryMethodSelect.name === 'نوع التوصيل' && !deliveryMethodSelect.value) { 
+            if (governorateSelect.value && !deliveryMethodSelect.value) { // Check if delivery method is selected for any governorate
                 alert('الرجاء اختيار طريقة التوصيل أولاً.');
                 return;
             }
             
-            // هذا هو الرابط الذي يجب تحديثه برابط سكريبت Google Apps Script الخاص بك
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxvPzOa6paLV2sHRHRGmJhYrt5eO6bM3YNNI7vOoHMTBiUehWSZzWUi0vA2QIdWzTU/exec'; 
+            // ** مهم: استبدل هذا بالرابط الفعلي لسكريبت Google Apps Script الخاص بك **
+            const scriptURL = 'https://script.google.com/macros/library/d/1f1U5EDcL2FUuRfjDBrryZDjBq-7dF_ZI-JO_4btz4pGuvlSrodeQHKNZ/17'; 
             const submitButton = form.querySelector('button[type="submit"]');
             const data = new FormData(form);
 
@@ -771,11 +754,11 @@
         
         function closeConfirmationModal() {
             document.getElementById('confirmation-modal').style.display = 'none';
-            cartItems = [];
+            cartItems = []; // Clear cart items
             productsPrice = 0;
             form.reset();
-            updateCartDetails(); // This will clear the fields and update counts
-
+            updateCartDetails(); // This will clear the fields and update counts and render empty cart
+            
             // Reset delivery related fields
             governorateSelect.value = ''; // Reset governorate select
             deliveryMethodSelect.innerHTML = '<option value="" disabled selected>-- اختر طريقة التوصيل --</option>'; // Clear method select
@@ -783,12 +766,10 @@
             deliveryMethodLabel.style.display = 'none';
             deliveryNotesDiv.classList.remove('show');
             deliveryNotesDiv.style.display = 'none';
-            deliveryMethodSelect.removeAttribute('name'); // <--- NEW: Ensure name is removed on reset
 
             // Re-enable all "Add to Cart" buttons
             document.querySelectorAll('.add-to-cart-btn, #weekly-offer-btn').forEach(button => {
                 button.disabled = false;
-                button.removeAttribute('data-item-added'); // Remove added flag
                 if(button.id === 'weekly-offer-btn') {
                     button.innerHTML = '<i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة';
                 } else {
@@ -847,6 +828,24 @@
         function closeSuggestionModal() {
             document.getElementById('suggestion-modal').style.display = 'none';
         }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const confirmationModal = document.getElementById('confirmation-modal');
+            const suggestionModal = document.getElementById('suggestion-modal');
+            const imageLightboxModal = document.getElementById('image-lightbox-modal'); 
+
+            if (event.target == confirmationModal) {
+                closeConfirmationModal();
+            }
+            if (event.target == suggestionModal) {
+                closeSuggestionModal();
+            }
+            if (event.target == imageLightboxModal) { 
+                imageLightboxModal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
+
