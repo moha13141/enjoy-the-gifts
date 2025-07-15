@@ -11,6 +11,358 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root{--primary-color:#c5a47e;--secondary-color:#2c3e50;--background-color:#f8f9fa;--text-color:#34495e;--light-gray:#ecf0f1;--white-color:#ffffff;--success-color:#27ae60;--danger-color:#e74c3c}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Cairo',sans-serif;background-color:var(--background-color);color:var(--text-color);line-height:1.8}.container{max-width:1200px;margin:0 auto;padding:0 20px}.section{padding:80px 0}#products,#contact,#why-us{background-color:var(--white-color)}#testimonials-cta,#weekly-offer{background-color:var(--background-color)}.section-title{text-align:center;font-size:2.8rem;margin-bottom:20px;color:var(--secondary-color);font-weight:900;position:relative}.section-title::after{content:'';display:block;width:80px;height:4px;background-color:var(--primary-color);margin:20px auto 0;border-radius:2px}header{background-color:var(--white-color);box-shadow:0 2px 15px rgba(0,0,0,.08);padding:15px 0;position:sticky;top:0;z-index:1000}header .container{display:flex;justify-content:space-between;align-items:center}.logo{font-size:2rem;font-weight:900;color:var(--secondary-color);text-decoration:none;transition:color .3s}.logo:hover{color:var(--primary-color)}header nav{display:flex;align-items:center;gap:25px}header nav a{text-decoration:none;color:var(--text-color);font-weight:700;font-size:1rem;transition:color .3s ease}header nav a:hover{color:var(--primary-color)}.cart-icon{position:relative;cursor:pointer;color:var(--secondary-color);font-size:1.8rem;transition:color .3s}.cart-icon:hover{color:var(--primary-color)}#cart-count{position:absolute;top:-8px;right:-12px;background-color:var(--danger-color);color:#fff;border-radius:50%;width:24px;height:24px;display:flex;justify-content:center;align-items:center;font-size:.85rem;font-weight:700;border:2px solid var(--white-color)}.hero{background:linear-gradient(rgba(44,62,80,.85),rgba(44,62,80,.85)),url(https://images.pexels.com/photos/3727513/pexels-photo-3727513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center/cover;color:var(--white-color);text-align:center;padding:120px 20px}.hero-content h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:15px;color:var(--white-color);text-shadow:2px 2px 5px rgba(0,0,0,.5)}.hero-content h1 span{color:var(--primary-color)}.hero-content p{font-size:clamp(1.1rem,2.5vw,1.3rem);max-width:650px;margin:0 auto 30px}.cta-button{background-color:var(--primary-color);color:var(--secondary-color);padding:14px 35px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all .3s ease;border:none;cursor:pointer;display:inline-block}.cta-button:hover{background-color:var(--white-color);transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.2)}#gift-finder-tool{padding:60px 0;background-color:var(--light-gray)}.finder-wrapper{background:var(--white-color);border-radius:12px;padding:40px;box-shadow:0 8px 30px rgba(0,0,0,.07);text-align:center}.finder-wrapper h4{font-size:1.8rem;color:var(--secondary-color);margin-bottom:30px}.finder-controls{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center}.finder-select-wrapper{position:relative}.finder-select-wrapper i{position:absolute;top:50%;right:15px;transform:translateY(-50%);color:var(--primary-color);font-size:1.1rem}.finder-controls select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:var(--white-color);border:2px solid var(--light-gray);border-radius:8px;padding:12px 45px 12px 15px;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:600;color:var(--text-color);cursor:pointer;transition:all .3s}.finder-controls select:hover{border-color:var(--primary-color)}.finder-controls button{background-color:var(--secondary-color);color:var(--white-color);border:none;padding:14px 35px;font-size:1.1rem;border-radius:8px;cursor:pointer;transition:all .3s;font-weight:700}.finder-controls button:hover{background-color:var(--primary-color);color:var(--secondary-color);transform:translateY(-2px)}.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:60px}.product-card{background-color:var(--white-color);border-radius:15px;box-shadow:0 5px 25px rgba(0,0,0,.07);padding:30px;text-align:center;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;border:1px solid var(--light-gray)}.product-card:hover{transform:translateY(-12px);box-shadow:0 12px 35px rgba(44,62,80,.12)}.product-card .icon{font-size:4rem;color:var(--primary-color);margin-bottom:20px;line-height:1;transition:transform .3s}.product-card:hover .icon{transform:scale(1.1)}.product-card h3{font-size:1.6rem;color:var(--secondary-color);margin-bottom:10px}.product-card p{font-size:1rem;color:#7f8c8d}.offer-container{display:flex;align-items:center;gap:50px;flex-wrap:wrap;background:var(--white-color);padding:40px;border-radius:15px;box-shadow:0 10px 40px rgba(0,0,0,.08)}.offer-image,.offer-details{flex:1;min-width:300px}.offer-image img{width:100%;border-radius:10px}.offer-details h3{font-size:2.5rem;font-weight:900;color:var(--secondary-color)}.offer-details p{font-size:1.2rem;margin:15px 0 25px}.offer-pricing{display:flex;align-items:center;gap:20px;margin-bottom:30px}.offer-pricing .new-price{font-size:2.5rem;font-weight:900;color:var(--danger-color)}.offer-pricing .old-price{font-size:1.5rem;text-decoration:line-through;color:#95a5a6}@media (max-width:768px){.offer-container{flex-direction:column;text-align:center}.offer-pricing{justify-content:center}}.why-us-compact-container{text-align:center;max-width:900px;margin:0 auto}.why-us-compact-container ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem 3rem;margin-top:40px}.why-us-compact-container li{font-size:1.05rem;display:flex;align-items:center;gap:12px;color:var(--text-color);font-weight:600}.why-us-compact-container li i{color:var(--primary-color);font-size:1.8rem}.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:60px}.testimonial-card{background:var(--white-color);padding:10px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:all .3s;cursor:pointer}.testimonial-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(44,62,80,.1)}.testimonial-card img{width:100%;height:auto;border-radius:5px;display:block}.contact-wrapper{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;margin-top:60px}.contact-info,.map{flex:1;min-width:320px}.contact-info p{font-size:1.1rem;margin-bottom:20px}.contact-info i{color:var(--primary-color);margin-left:12px;font-size:1.3rem;width:25px;text-align:center}.contact-info a{color:var(--secondary-color);text-decoration:none;font-weight:700}.contact-info a:hover{text-decoration:underline}.contact-info h4{font-size:1.4rem;color:var(--secondary-color);margin-top:25px;margin-bottom:15px}.social-media a{color:var(--secondary-color);font-size:2.5rem;margin:0 15px;transition:color .3s ease}.social-media a:hover{color:var(--primary-color)}.map iframe{width:100%;height:400px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.1)}footer{background-color:var(--secondary-color);color:var(--white-color);text-align:center;padding:25px 0}.page-view{display:none;padding:60px 0;animation:fadeIn .5s ease-in-out}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:50px;border-bottom:2px solid var(--light-gray);padding-bottom:20px}.back-button{background:var(--secondary-color);color:#fff;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;transition:background .3s;display:flex;align-items:center;gap:10px}.back-button:hover{background:var(--primary-color);color:var(--secondary-color)}.item-grid,.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}.item-card,.category-card{background:#fff;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.08);overflow:hidden;text-align:center;transition:all .3s}.item-card:hover,.category-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.1)}.category-card{padding:30px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center}.category-card .icon{font-size:3.5rem;color:var(--primary-color);margin-bottom:20px}.category-card h4{font-size:1.5rem;color:var(--secondary-color)}.item-card img{width:100%;height:250px;object-fit:cover}.item-card-body{padding:20px}.item-card-body h4{font-size:1.3rem;color:var(--secondary-color);margin-bottom:15px}.add-to-cart-btn{background:var(--primary-color);color:var(--secondary-color);border:none;padding:10px 25px;border-radius:5px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;transition:all .3s}.add-to-cart-btn:hover{background:var(--secondary-color);color:#fff}.add-to-cart-btn:disabled{background-color:#bdc3c7;color:#7f8c8d;cursor:not-allowed}.toast-notification{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background-color:var(--success-color);color:#fff;padding:15px 30px;border-radius:8px;z-index:2000;opacity:0;transition:opacity .5s,bottom .5s;font-size:1rem;font-weight:700;box-shadow:0 5px 20px rgba(0,0,0,.2)}.toast-notification.show{bottom:30px;opacity:1}.checkout-form{max-width:700px;margin:0 auto;background:#fff;padding:40px;border-radius:10px;box-shadow:0 5px 25px rgba(0,0,0,.1)}.checkout-form label{display:block;margin-bottom:10px;font-weight:700;color:var(--secondary-color);font-size:1.1rem}.checkout-form input,.checkout-form textarea,.checkout-form select{width:100%;padding:12px;margin-bottom:20px;border:1px solid #ccc;border-radius:5px;font-family:'Cairo',sans-serif;font-size:1rem;box-sizing:border-box}.checkout-form input:focus,.checkout-form textarea:focus,.checkout-form select:focus{border-color:var(--primary-color);outline:none}.checkout-form textarea{resize:vertical;min-height:120px;background-color:#fdfdfd}.form-instructions{padding:20px;background-color:#eaf2f8;border-right:5px solid #3498db;border-radius:5px;margin-bottom:25px;font-size:1rem;line-height:1.7}.form-instructions i{margin-left:10px;color:#3498db}.form-instructions strong{color:var(--secondary-color)}.total-price-display{background-color:var(--light-gray);border:2px dashed var(--primary-color);border-radius:8px;padding:15px;text-align:center;font-size:1.4rem;font-weight:700;margin-bottom:20px}.total-price-display span{color:var(--success-color)}.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:3000;display:none;justify-content:center;align-items:center;animation:fadeIn .3s}.modal-content{background:var(--white-color);padding:40px;border-radius:15px;text-align:center;max-width:500px;width:90%;box-shadow:0 5px 20px rgba(0,0,0,.2);position:relative;animation:slideIn .4s}@keyframes slideIn{from{transform:translateY(-50px);opacity:0}to{transform:translateY(0);opacity:1}}.modal-content .icon{font-size:5rem;color:var(--success-color);margin-bottom:20px}.modal-content h2{font-size:2rem;color:var(--secondary-color);margin-bottom:15px}.modal-content p{font-size:1.1rem;margin-bottom:25px;line-height:1.8}.modal-content .close-button{background:var(--secondary-color);color:#fff;border:none;padding:12px 35px;border-radius:50px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;transition:all .3s}.modal-content .close-button:hover{background:var(--primary-color);color:var(--secondary-color)}#image-lightbox-modal{background:rgba(0,0,0,.85)}#image-lightbox-modal .lightbox-content{max-width:90%;max-height:85vh;object-fit:contain;box-shadow:0 5px 30px rgba(0,0,0,.5)}#image-lightbox-modal .modal-close-btn{position:absolute;top:15px;right:35px;color:#f1f1f1;font-size:40px;font-weight:700;transition:.3s;cursor:pointer}#image-lightbox-modal .modal-close-btn:hover,#image-lightbox-modal .modal-close-btn:focus{color:#bbb;text-decoration:none}#suggestion-modal .modal-content .icon{color:var(--primary-color)}#suggestion-modal .modal-content h2{font-size:1.8rem}#suggestion-modal .modal-content p{font-size:1.2rem}
+        
+        /* New Responsive CSS for Mobile Devices */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px; /* Smaller padding on mobile */
+            }
+            .section {
+                padding: 40px 0; /* Smaller section padding */
+            }
+            .section-title {
+                font-size: 2rem; /* Smaller title size */
+                margin-bottom: 15px;
+            }
+            .section-title::after {
+                width: 60px; /* Smaller underline */
+                margin-top: 10px;
+            }
+            header .container {
+                flex-direction: row; /* Keep logo and nav on one line */
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px;
+            }
+            .logo {
+                font-size: 1.5rem; /* Smaller logo */
+            }
+            header nav {
+                gap: 15px; /* Smaller gap between nav items */
+                flex-wrap: wrap; /* Allow nav items to wrap if space is too small */
+                justify-content: flex-end; /* Align to the right */
+            }
+            header nav a {
+                font-size: 0.9rem; /* Smaller nav links */
+            }
+            .cart-icon {
+                font-size: 1.5rem; /* Smaller cart icon */
+            }
+            #cart-count {
+                width: 20px;
+                height: 20px;
+                font-size: 0.75rem;
+                top: -6px;
+                right: -10px;
+            }
+            .hero {
+                padding: 80px 15px; /* Smaller hero padding */
+            }
+            .hero-content h1 {
+                font-size: 2.2rem; /* Smaller hero title */
+            }
+            .hero-content p {
+                font-size: 1rem; /* Smaller hero paragraph */
+                margin-bottom: 20px;
+            }
+            .cta-button {
+                padding: 10px 25px; /* Smaller CTA button */
+                font-size: 1rem;
+            }
+
+            /* Gift Finder Tool adjustments */
+            .finder-wrapper {
+                padding: 25px;
+            }
+            .finder-wrapper h4 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+            .finder-controls {
+                flex-direction: column; /* Stack controls vertically */
+                gap: 15px;
+            }
+            .finder-controls select, .finder-controls button {
+                width: 100%; /* Full width for select and button */
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+
+            /* Product Grid adjustments */
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller min-width for cards */
+                gap: 20px;
+                margin-top: 40px;
+            }
+            .product-card {
+                padding: 20px;
+            }
+            .product-card .icon {
+                font-size: 3rem; /* Smaller icons */
+                margin-bottom: 15px;
+            }
+            .product-card h3 {
+                font-size: 1.4rem; /* Smaller product title */
+            }
+            .product-card p {
+                font-size: 0.9rem;
+            }
+
+            /* Weekly Offer adjustments */
+            .offer-container {
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+            }
+            .offer-details h3 {
+                font-size: 1.8rem;
+            }
+            .offer-details p {
+                font-size: 1rem;
+                margin: 10px 0 20px;
+            }
+            .offer-pricing .new-price {
+                font-size: 2rem;
+            }
+            .offer-pricing .old-price {
+                font-size: 1.2rem;
+            }
+
+            /* Why Us adjustments */
+            .why-us-compact-container ul {
+                flex-direction: column; /* Stack reasons vertically */
+                gap: 1.5rem;
+                margin-top: 30px;
+            }
+            .why-us-compact-container li {
+                font-size: 0.95rem;
+                justify-content: center; /* Center items in list */
+            }
+            .why-us-compact-container li i {
+                font-size: 1.5rem;
+            }
+
+            /* Testimonials and Contact adjustments */
+            .testimonials-grid, .item-grid, .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
+                gap: 15px;
+                margin-top: 40px;
+            }
+            .contact-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .contact-info, .map {
+                min-width: unset; /* Remove min-width to allow full flexibility */
+                width: 100%;
+            }
+            .contact-info p {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            .contact-info i {
+                font-size: 1.1rem;
+            }
+            .social-media a {
+                font-size: 2rem;
+                margin: 0 10px;
+            }
+            .map iframe {
+                height: 300px; /* Smaller map height */
+            }
+
+            /* Page View specific adjustments */
+            .page-header {
+                flex-direction: column; /* Stack title and button */
+                align-items: center;
+                text-align: center;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+            }
+            .page-header .section-title {
+                margin-bottom: 15px;
+            }
+            .back-button {
+                width: 80%; /* Make back button wider */
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            /* Checkout Form adjustments */
+            .checkout-form {
+                padding: 25px;
+            }
+            .checkout-form label {
+                font-size: 1rem;
+            }
+            .checkout-form input, .checkout-form textarea, .checkout-form select {
+                padding: 10px;
+                margin-bottom: 15px;
+                font-size: 0.95rem;
+            }
+            .form-instructions {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+            .total-price-display {
+                font-size: 1.2rem;
+                padding: 12px;
+            }
+
+            /* Modals adjustments */
+            .modal-content {
+                padding: 25px;
+            }
+            .modal-content .icon {
+                font-size: 4rem;
+                margin-bottom: 15px;
+            }
+            .modal-content h2 {
+                font-size: 1.6rem;
+            }
+            .modal-content p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            .modal-content .close-button {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+            #image-lightbox-modal .modal-close-btn {
+                font-size: 30px;
+                right: 20px;
+                top: 10px;
+            }
+        }
+
+        /* New styles for modern appearance */
+        .modern-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: var(--white-color) url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292%22%20height%3D%22292%22%20viewBox%3D%220%200%20292%20292%22%3E%3Cpath%20fill%3D%22%23c5a47e%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.7%200-13.3%202.7-17.5%207c-4.3%204.3-6.9%2010.8-6.9%2017.5s2.7%2013.3%207%2017.5l128%20128c4.2%204.2%2010.8%206.9%2017.5%206.9s13.3-2.7%2017.5-6.9l128-128c4.2-4.2%206.9-10.8%206.9-17.5s-2.7-13.3-7-17.5z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 15px center;
+            background-size: 12px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            padding: 12px 45px 12px 15px; /* Adjust padding for arrow */
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all .3s;
+            box-sizing: border-box;
+            width: 100%; /* Ensure it takes full width */
+        }
+        .modern-select:hover {
+            border-color: var(--primary-color);
+        }
+        .modern-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(197, 164, 126, 0.3); /* Soft focus ring */
+        }
+
+        .delivery-note {
+            padding: 15px;
+            background-color: #e6f7ff; /* Light blue background */
+            border-right: 5px solid #3399ff; /* Blue border on the right */
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .delivery-note.show {
+            opacity: 1;
+        }
+        .delivery-note i {
+            color: #3399ff; /* Icon color matching border */
+            font-size: 1.3rem;
+        }
+        .delivery-note strong {
+            color: var(--secondary-color);
+        }
+
+        /* Adjustments for the specific form elements */
+        .checkout-form select {
+            margin-bottom: 20px; /* Ensure consistent spacing */
+        }
+
+        /* Cart Items List Styles */
+        .cart-items-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 15px;
+            background-color: var(--white-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--light-gray);
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-name {
+            font-weight: 700;
+            flex-grow: 1;
+        }
+
+        .cart-item-price {
+            color: var(--primary-color);
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: var(--danger-color);
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            padding: 5px; /* Make it easier to click */
+        }
+
+        .remove-item-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments for cart items */
+        @media (max-width: 768px) {
+            .cart-item {
+                flex-wrap: wrap; /* Allow items to wrap */
+                justify-content: center;
+                text-align: center;
+            }
+            .cart-item-name, .cart-item-price {
+                width: 100%;
+                margin-bottom: 5px;
+                margin-left: 0;
+            }
+            .remove-item-btn {
+                margin-top: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -36,14 +388,24 @@
             <section class="hero"><div class="hero-content"><h1>أجمل الهدايا <span>لأغلى الناس</span></h1><p>في Enjoy The Gifts، نصنع كل هدية بحب لتصل مشاعرك بأفضل صورة.</p><a href="#products" class="cta-button">اكتشف منتجاتنا</a></div></section>
             <section id="gift-finder-tool"><div class="container"><div class="finder-wrapper"><h4>محتار في اختيار الهدية؟ دعنا نساعدك!</h4><div class="finder-controls"><div class="finder-select-wrapper"><i class="fas fa-user"></i><select id="gift-recipient"><option value="any">لمن الهدية؟</option><option value="for-her">لها</option><option value="for-him">له</option></select></div><div class="finder-select-wrapper"><i class="fas fa-calendar-alt"></i><select id="gift-occasion"><option value="any">ما المناسبة؟</option><option value="birthday">عيد ميلاد</option><option value="anniversary">ذكرى سنوية</option><option value="congrats">تهنئة</option></select></div><div class="finder-select-wrapper"><i class="fas fa-wallet"></i><select id="gift-budget"><option value="any">الميزانية؟</option><option value="low">أقل من 250</option><option value="medium">250 - 450</option><option value="high">أكثر من 450</option></select></div><button id="find-gift-btn"><i class="fas fa-search" style="margin-left: 8px;"></i> ابحث عن هدية</button></div></div></div></section>
             <section id="products" class="section"><div class="container"><h2 class="section-title">ما نقدمه</h2><div class="products-grid"><div class="product-card" onclick="showPage('printing-categories-page')"><div class="icon"><i class="fas fa-print"></i></div><h3>ركن الطباعة</h3><p>صمم منتجك الخاص بصورتك وتصميمك.</p></div><div class="product-card" onclick="showPage('gifts-page')"><div class="icon"><i class="fas fa-gift"></i></div><h3>هدايا وتغليف</h3><p>هدايا مميزة مع خدمة تغليف احترافية.</p></div><div class="product-card" onclick="showPage('teddy-bears-page')"><div class="icon"><i class="fas fa-child-reaching"></i></div><h3>دباديب وألعاب</h3><p>أحلى الدباديب التي تدخل الفرحة لقلوبكم.</p></div><div class="product-card" onclick="showPage('flowers-page')"><div class="icon"><i class="fas fa-fan"></i></div><h3>بوكيهات ورد</h3><p>بوكيهات ورد فريدة لكل المناسبات.</p></div><div class="product-card" onclick="showPage('watches-page')"><div class="icon"><i class="fas fa-clock"></i></div><h3>ساعات قيمة</h3><p>تشكيلة أنيقة تناسب كل الأذواق.</p></div><div class="product-card" onclick="showPage('perfumes-page')"><div class="icon"><i class="fas fa-spray-can-sparkles"></i></div><h3>عطور وروائح</h3><p>عطور فريدة تترك انطباعًا لا يُنسى.</p></div></div></div></section>
-            <section id="weekly-offer" class="section"><div class="container"><h2 class="section-title">عرض خاص لفترة محدودة!</h2><div class="offer-container"><div class="offer-image"><img src="https://i.ibb.co/dKSmVbN/offer-mockup.png" alt="عرض الأسبوع"></div><div class="offer-details"><h3>عرض التوفير: ماكيت + مج</h3><p>اطلب الآن ماكيت خشبي مطبوع من اختيارك مع مج سحري، واحصل على الاثنين معًا بسعر لا يصدق. هدية مثالية تجمع بين الذكرى والاستخدام اليومي!</p><div class="offer-pricing"><span class="new-price">فقط بـ 280 جنيه!</span><span class="old-price">بدلاً من 350 جنيه</span></div><button id="weekly-offer-btn" class="cta-button" onclick="addToCart(this, 'عرض الأسبوع (ماكيت + مج)', 280)"><i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة</button></div></div></div></section>
+            <section id="weekly-offer" class="section"><div class="container"><h2 class="section-title">عرض خاص لفترة محدودة!</h2><div class="offer-container"><div class="offer-image"><img src="https://i.ibb.co/dKSmVbN/offer-mockup.png" alt="عرض الأسبوع"></div><div class="offer-details"><h3>عرض التوفير: ماكيت + مج</h3><p>اطلب الآن ماكيت خشبي مطبوع من اختيارك مع مج سحري، واحصل على الاثنين معًا بسعر لا يصدق. هدية مثالية تجمع بين الذكرى والاستخدام اليومي!</p><div class="offer-pricing"><span class="new-price">فقط بـ 280 جنيه!</span><span class="old-price">بدلاً من 350 جنيه</span></div><button id="weekly-offer-btn" class="cta-button" onclick="addToCart(this, 'عرض الأسبوع (ماكيت + مج)', 280)" data-item-name="عرض الأسبوع (ماكيت + مج)">
+                <i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة
+            </button></div></div></div></section>
             <section id="why-us" class="section"><div class="container why-us-compact-container"><h2 class="section-title">لماذا تختار Enjoy The Gifts؟</h2><ul><li><i class="fas fa-gem"></i> أجود الخامات وأفضل الأسعار</li><li><i class="fas fa-shield-alt"></i> طبقة حماية للصور والماكيتات</li><li><i class="fas fa-hand-holding-heart"></i> ضمان رضا العميل</li><li><i class="fas fa-lock"></i> خصوصيتك أولويتنا</li></ul></div></section>
             <section id="testimonials-cta" class="section"><div class="container"><h2 class="section-title">نفخر بثقتكم!</h2><p style="text-align:center; max-width: 600px; margin: 30px auto 40px;">آراء عملائنا هي شهادة نعتز بها، وهي دافعنا لنقدم الأفضل دائمًا. شاهد ما قاله عملاؤنا عنا.</p><div style="text-align: center;"><button class="cta-button" onclick="showPage('testimonials-page')">شاهد كل الآراء</button></div></div></section>
-            <section id="contact" class="section"><div class="container"><h2 class="section-title">تواصل معنا</h2><div class="contact-wrapper"><div class="contact-info"><h3>زورنا أو كلمنا</h3><p><i class="fas fa-map-marker-alt"></i> <strong>العنوان:</strong> القاهرة، حدائق القبة، خلف قسم شرطة حدائق القبة.</p><p><i class="fas fa-phone"></i> <strong>رقم الموبايل:</strong> <a href="tel:01158348396">01158348396</a></p><p><i class="fas fa-user"></i> <strong>صاحب المحل:</strong> مصطفى عبد الله</p><h4>تابع كل جديد هنا!</h4><div class="social-media"><a href="https://www.instagram.com/enjoy_the_gifts_/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/profile.php?id=100083038816986" target="_blank"><i class="fab fa-facebook"></i></a></div></div><div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.410196727274!2d31.28293681511598!3d30.082470981869344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e061c52897d%3A0x6a0b8a4f8d3d57e3!2sHadayek%20El-Kobba%20Police%20Station!5e0!3m2!1sen!2seg!4v1672584501438!5m2!1sen!2seg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></div></section>
+            <section id="contact" class="section"><div class="container"><h2 class="section-title">تواصل معنا</h2><div class="contact-wrapper"><div class="contact-info"><h3>زورنا أو كلمنا</h3><p><i class="fas fa-map-marker-alt"></i> <strong>العنوان:</strong> القاهرة، حدائق القبة، خلف قسم شرطة حدائق القبة.</p><p><i class="fas fa-phone"></i> <strong>رقم الموبايل:</strong> <a href="tel:01158348396">01158348396</a></p><p><i class="fas fa-user"></i> <strong>صاحب المحل:</strong> مصطفى عبد الله</p><h4>تابع كل جديد هنا!</h4><div class="social-media">
+                <a href="https://www.instagram.com/enjoy_the_gifts_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/mostafaabdalla00/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/201096245428" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div></div><div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.410196727274!2d31.28293681511598!3d30.082470981869344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e061c52897d%3A0x6a0b8a4f8d3d57e3!2sHadayek%20El-Kobba%20Police%20Station!5e0!3m2!1sen!2seg!4v1672584501438!5m2!1sen!2seg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></div></section>
         </main>
     </div>
 
-    <div id="testimonials-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">آراء عملائنا الكرام</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="testimonials-grid"><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/L6gD0xj/review-placeholder-1.png" alt="رأي عميل ١"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/hckKx7F/review-placeholder-2.png" alt="رأي عميل ٢"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/y6P9q1H/review-placeholder-3.png" alt="رأي عميل ٣"></div></div></div></div><div id="watches-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">ساعات قيمة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="item-grid"><div class="item-card"><img src="https://i.ibb.co/31C6R9J/classic-gold-watch.jpg" alt="ساعة ذهبية"><div class="item-card-body"><h4>ساعة ذهبية كلاسيك</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة ذهبية كلاسيك', 450)">أضف إلى السلة</button></div></div><div class="item-card"><img src="https://i.ibb.co/k5Cmqb5/black-leather-watch.jpg" alt="ساعة سوداء"><div class="item-card-body"><h4>ساعة جلد سوداء</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة جلد سوداء', 400)">أضف إلى السلة</button></div></div></div></div></div><div id="printing-categories-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">اختر فئة الطباعة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="category-grid"><div class="category-card" onclick="showPage('maquettes-details-page')"><div class="icon"><i class="fas fa-puzzle-piece"></i></div><h4>ماكيتات خشبية</h4></div><div class="category-card" onclick="showPage('portraits-details-page')"><div class="icon"><i class="fas fa-portrait"></i></div><h4>بورتريهات</h4></div><div class="category-card" onclick="showPage('mugs-details-page')"><div class="icon"><i class="fas fa-mug-hot"></i></div><h4>مجات</h4></div><div class="category-card" onclick="showPage('wall-clocks-details-page')"><div class="icon"><i class="fas fa-clock"></i></div><h4>ساعات حائط</h4></div><div class="category-card" onclick="showPage('mirrors-details-page')"><div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div><h4>مرايا سحرية</h4></div><div class="category-card" onclick="showPage('notebooks-details-page')"><div class="icon"><i class="fas fa-book"></i></div><h4>نوت بوك</h4></div></div></div></div>
+    <div id="testimonials-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">آراء عملائنا الكرام</h2><button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button></div><div class="testimonials-grid"><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/L6gD0xj/review-placeholder-1.png" alt="رأي عميل ١"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/hckKx7F/review-placeholder-2.png" alt="رأي عميل ٢"></div><div class="testimonial-card"><img class="review-image" src="https://i.ibb.co/y6P9q1H/review-placeholder-3.png" alt="رأي عميل ٣"></div></div></div></div><div id="watches-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">ساعات قيمة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="item-grid"><div class="item-card"><img src="https://i.ibb.co/31C6R9J/classic-gold-watch.jpg" alt="ساعة ذهبية"><div class="item-card-body"><h4>ساعة ذهبية كلاسيك</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة ذهبية كلاسيك', 450)" data-item-name="ساعة ذهبية كلاسيك">
+                أضف إلى السلة
+            </button></div></div><div class="item-card"><img src="https://i.ibb.co/k5Cmqb5/black-leather-watch.jpg" alt="ساعة سوداء"><div class="item-card-body"><h4>ساعة جلد سوداء</h4><button class="add-to-cart-btn" onclick="addToCart(this, 'ساعة جلد سوداء', 400)" data-item-name="ساعة جلد سوداء">
+                أضف إلى السلة
+            </button></div></div></div></div></div><div id="printing-categories-page" class="page-view"><div class="container"><div class="page-header"><h2 class="section-title" style="margin-bottom: 0;">اختر فئة الطباعة</h2><button class="back-button" onclick="showMainPage(null, '#products')"><i class="fas fa-arrow-left"></i> العودة للمنتجات</button></div><div class="category-grid"><div class="category-card" onclick="showPage('maquettes-details-page')"><div class="icon"><i class="fas fa-puzzle-piece"></i></div><h4>ماكيتات خشبية</h4></div><div class="category-card" onclick="showPage('portraits-details-page')"><div class="icon"><i class="fas fa-portrait"></i></div><h4>بورتريهات</h4></div><div class="category-card" onclick="showPage('mugs-details-page')"><div class="icon"><i class="fas fa-mug-hot"></i></div><h4>مجات</h4></div><div class="category-card" onclick="showPage('wall-clocks-details-page')"><div class="icon"><i class="fas fa-clock"></i></div><h4>ساعات حائط</h4></div><div class="category-card" onclick="showPage('mirrors-details-page')"><div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div><h4>مرايا سحرية</h4></div><div class="category-card" onclick="showPage('notebooks-details-page')"><div class="icon"><i class="fas fa-book"></i></div><h4>نوت بوك</h4></div></div></div></div>
     
     <div id="cart-page" class="page-view">
         <div class="container">
@@ -54,30 +416,50 @@
             <div class="checkout-form">
                 <form id="checkout-form-element" method="POST">
                     <p style="text-align:center; font-size:1.1rem; margin-bottom:25px;">برجاء ملء بياناتك وسنتواصل معك لتأكيد الطلب وتفاصيل التوصيل.</p>
+                    
                     <label for="name"><i class="fas fa-user"></i> الاسم بالكامل:</label>
                     <input type="text" id="name" name="الاسم" required>
                     <label for="phone"><i class="fas fa-phone"></i> رقم الموبايل:</label>
                     <input type="tel" id="phone" name="رقم الموبايل" required>
-                    <label for="order-details"><i class="fas fa-gift"></i> المنتجات المطلوبة:</label>
-                    <textarea id="order-details" name="المنتجات المطلوبة" placeholder="المنتجات التي اخترتها ستظهر هنا تلقائياً..." required readonly></textarea>
+                    
+                    <!-- عرض المنتجات في السلة هنا -->
+                    <label><i class="fas fa-gift"></i> المنتجات المطلوبة:</label>
+                    <div id="cart-items-display" class="cart-items-list">
+                        <!-- Cart items will be rendered here by JavaScript -->
+                        <p style="text-align: center; color: #7f8c8d; font-size: 1.1rem; padding: 20px;">سلة التسوق فارغة حالياً.</p>
+                    </div>
+
+                    <!-- حقل المنتجات المطلوبة المخفي لإرسال البيانات -->
+                    <input type="hidden" id="order-details-hidden" name="المنتجات المطلوبة">
+
                     <label for="address"><i class="fas fa-map-marker-alt"></i> العنوان بالتفصيل:</label>
                     <input type="text" id="address" name="العنوان" required placeholder="مثال: حدائق القبة، شارع ...، عمارة ...، شقة ...">
                     <label for="location-link"><i class="fas fa-map-pin"></i> رابط موقعك على الخريطة (اختياري):</label>
                     <input type="url" id="location-link" name="رابط الموقع" placeholder="انسخ رابط موقعك من خرائط جوجل هنا">
                     
-                    <!-- *** قسم التوصيل الجديد *** -->
-                    <label for="delivery-options"><i class="fas fa-truck"></i> اختر طريقة التوصيل:</label>
-                    <select id="delivery-options" name="نوع التوصيل" onchange="updateTotal()" required>
-                        <option value="" disabled selected>-- اختر من هنا --</option>
-                        <option value="توصيل لأقرب محطة مترو" data-cost="40">توصيل لأقرب محطة مترو (40 جنيه)</option>
-                        <option value="توصيل للمنزل" data-cost="60">توصيل للمنزل (60 جنيه)</option>
+                    <label for="governorate-select"><i class="fas fa-building"></i> اختر المحافظة:</label>
+                    <select id="governorate-select" class="modern-select" onchange="populateDeliveryMethods()" name="المحافظة" required>
+                        <option value="" disabled selected>-- اختر المحافظة --</option>
+                        <option value="القاهرة والجيزة">القاهرة والجيزة</option>
+                        <option value="باقي المحافظات">باقي المحافظات</option>
                     </select>
 
-                    <!-- حقول مخفية لإرسال البيانات للسكريبت -->
+                    <!-- مربع مدة التوصيل الديناميكي والمزين -->
+                    <div id="delivery-notes" class="delivery-note" style="display: none;">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span id="delivery-text"></span>
+                    </div>
+
+                    <label for="delivery-method-select" id="delivery-method-label" style="display:none;"><i class="fas fa-truck"></i> طريقة التوصيل:</label>
+                    <select id="delivery-method-select" class="modern-select" name="نوع التوصيل" onchange="updateTotal()" style="display:none;" required>
+                        <option value="" disabled selected>-- اختر طريقة التوصيل --</option>
+                    </select>
+
+                    <!-- تم تعديل اسم هذا الحقل ليتطابق مع السكريبت -->
+                    <input type="hidden" id="delivery-cost-hidden" name="سعر التوصيل" value="0">
                     <input type="hidden" id="products-price-hidden" name="سعر المنتجات">
                     <input type="hidden" id="total-price-hidden" name="التكلفة الإجمالية">
                     
-                    <!-- *** عرض السعر الإجمالي للعميل *** -->
                     <div id="total-price-container" style="display: none;">
                         <div class="total-price-display">
                             السعر الإجمالي (شامل التوصيل): <span id="total-price-value">0</span> جنيه
@@ -103,9 +485,46 @@
         const mainContent = document.getElementById('main-content');
         const footer = document.getElementById('footer');
         const cartCountSpan = document.getElementById('cart-count');
-        const orderDetailsTextarea = document.getElementById('order-details');
+        const orderDetailsHiddenInput = document.getElementById('order-details-hidden'); // Changed from textarea
+        const cartItemsDisplay = document.getElementById('cart-items-display'); // New element for displaying items
+        
+        const governorateSelect = document.getElementById('governorate-select');
+        const deliveryMethodSelect = document.getElementById('delivery-method-select');
+        const deliveryMethodLabel = document.getElementById('delivery-method-label');
+        const deliveryNotesDiv = document.getElementById('delivery-notes');
+        const deliveryNotesText = document.getElementById('delivery-text');
+
+        // Define all delivery options and their costs
+        const deliveryOptionsData = {
+            "القاهرة والجيزة": [ // Changed value to match select option
+                { text: 'توصيل للمنزل (60 جنيه)', value: 'توصيل للمنزل', cost: 60 },
+                { text: 'أقرب محطة مترو (40 جنيه)', value: 'أقرب محطة مترو', cost: 40 }
+            ],
+            "باقي المحافظات": [ // Changed value to match select option
+                { text: 'الإسكندرية: 90 جنيه', value: 'الإسكندرية', cost: 90 },
+                { text: 'القليوبية: 90 جنيه', value: 'القليوبية', cost: 90 },
+                { text: 'البحيرة: 90 جنيه', value: 'البحيرة', cost: 90 },
+                { text: 'الغربية: 90 جنيه', value: 'الغربية', cost: 90 },
+                { text: 'المنصورة: 90 جنيه', value: 'المنصورة', cost: 90 },
+                { text: 'طنطا: 90 جنيه', value: 'طنطا', cost: 90 },
+                { text: 'دمياط: 90 جنيه', value: 'دمياط', cost: 90 },
+                { text: 'كفر الشيخ: 90 جنيه', value: 'كفر الشيخ', cost: 90 },
+                { text: 'الإسماعيلية: 90 جنيه', value: 'الإسماعيلية', cost: 90 },
+                { text: 'بورسعيد: 90 جنيه', value: 'بورسعيد', cost: 90 },
+                { text: 'السويس: 90 جنيه', value: 'السويس', cost: 90 },
+                { text: 'الشرقية: 90 جنيه', value: 'الشرقية', cost: 90 },
+                { text: 'المنوفية: 90 جنيه', value: 'المنوفية', cost: 90 },
+                { text: 'محافظات الصعيد: 150 جنيه', value: 'محافظات الصعيد', cost: 150 },
+                { text: 'دهب: 200 جنيه', value: 'دهب', cost: 200 },
+                { text: 'الغردقة: 200 جنيه', value: 'الغردقة', cost: 200 },
+                { text: 'شرم الشيخ: 200 جنيه', value: 'شرم الشيخ', cost: 200 },
+                { text: 'البحر الأحمر: 180 جنيه', value: 'البحر الأحمر', cost: 180 },
+                { text: 'مرسى مطروح: 150 جنيه', value: 'مرسى مطروح', cost: 150 }
+            ]
+        };
         
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize placeholder pages
             const placeholderPages = ['gifts-page', 'teddy-bears-page', 'flowers-page', 'perfumes-page', 'maquettes-details-page', 'portraits-details-page', 'mugs-details-page', 'wall-clocks-details-page', 'mirrors-details-page', 'notebooks-details-page'];
             placeholderPages.forEach(id => {
                 if(document.getElementById(id)) return; // Don't recreate existing pages
@@ -119,6 +538,8 @@
             });
             initImageLightbox();
             initGiftFinder();
+            // No initial call to populateDeliveryMethods here, as it should be triggered by user selection
+            renderCartItems(); // Initial render of cart items (will show empty message)
         });
 
         function createPlaceholderPage(id, backButtonText, backFunction) {
@@ -143,7 +564,7 @@
                 activePage.style.display = 'block';
                 window.scrollTo(0, 0);
                 if (pageId === 'cart-page') {
-                    updateCartDetails(); // Update cart details when showing cart page
+                    updateCartDetails(); // Update cart details and render when showing cart page
                 }
             }
         }
@@ -164,11 +585,12 @@
             cartCountSpan.innerText = cartItems.length;
             productsPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
-            if(orderDetailsTextarea) {
-                orderDetailsTextarea.value = cartItems.map(item => item.name).join('، ');
-                document.getElementById('products-price-hidden').value = productsPrice;
-                updateTotal(); // Update total price whenever cart changes
-            }
+            // Update the hidden input for form submission
+            orderDetailsHiddenInput.value = cartItems.map(item => item.name).join('، ');
+            document.getElementById('products-price-hidden').value = productsPrice;
+            
+            renderCartItems(); // Re-render the displayed cart items
+            updateTotal(); // Update total price whenever cart changes
         }
 
         function addToCart(button, itemName, itemPrice) {
@@ -183,17 +605,112 @@
             setTimeout(() => toast.classList.remove('show'), 2500);
             button.innerHTML = '<i class="fas fa-check" style="margin-left: 8px;"></i> تمت الإضافة';
             button.disabled = true;
+            button.setAttribute('data-item-added', 'true'); // Mark button as added
+        }
+
+        function removeItem(itemName) {
+            cartItems = cartItems.filter(item => item.name !== itemName);
+            
+            // Re-enable the "Add to Cart" button for this item
+            document.querySelectorAll('.add-to-cart-btn, #weekly-offer-btn').forEach(button => {
+                // Check if the button corresponds to the removed item
+                if (button.getAttribute('data-item-name') === itemName) {
+                    button.disabled = false;
+                    button.removeAttribute('data-item-added'); // Remove added flag
+                    if (button.id === 'weekly-offer-btn') {
+                        button.innerHTML = '<i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة';
+                    } else {
+                        button.innerHTML = 'أضف إلى السلة';
+                    }
+                }
+            });
+
+            updateCartDetails(); // Update cart display and total
+        }
+
+        function renderCartItems() {
+            cartItemsDisplay.innerHTML = ''; // Clear previous items
+
+            if (cartItems.length === 0) {
+                cartItemsDisplay.innerHTML = '<p style="text-align: center; color: #7f8c8d; font-size: 1.1rem; padding: 20px;">سلة التسوق فارغة حالياً.</p>';
+                return;
+            }
+
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <span class="cart-item-name">${item.name}</span>
+                    <span class="cart-item-price">${item.price} جنيه</span>
+                    <button class="remove-item-btn" onclick="removeItem('${item.name}')">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                `;
+                cartItemsDisplay.appendChild(itemDiv);
+            });
         }
         
+        function populateDeliveryMethods() {
+            const selectedGovernorate = governorateSelect.value;
+            deliveryMethodSelect.innerHTML = '<option value="" disabled selected>-- اختر طريقة التوصيل --</option>'; // Clear existing options
+            
+            // Hide notes and delivery method select/label initially
+            deliveryNotesDiv.classList.remove('show'); 
+            deliveryNotesDiv.style.display = 'none';
+            deliveryMethodSelect.style.display = 'none';
+            deliveryMethodLabel.style.display = 'none';
+            deliveryMethodSelect.removeAttribute('required'); // Remove required until populated
+            deliveryMethodSelect.removeAttribute('name'); // <--- NEW: Remove name when hidden
+
+            if (selectedGovernorate) {
+                const options = deliveryOptionsData[selectedGovernorate];
+                if (options) {
+                    options.forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.dataset.cost = option.cost;
+                        opt.textContent = option.text;
+                        deliveryMethodSelect.appendChild(opt);
+                    });
+                    deliveryMethodSelect.style.display = 'block'; // Show method select
+                    deliveryMethodLabel.style.display = 'block'; // Show method label
+                    deliveryMethodSelect.setAttribute('required', 'required'); // Set required
+                    deliveryMethodSelect.name = 'نوع التوصيل'; // <--- NEW: Set name when visible
+                }
+
+                // Display delivery notes with animation
+                if (selectedGovernorate === 'القاهرة والجيزة') {
+                    deliveryNotesText.innerHTML = '<strong>مدة التوصيل:</strong> خلال يوم أو يومين عمل.';
+                    deliveryNotesDiv.style.display = 'flex';
+                    setTimeout(() => deliveryNotesDiv.classList.add('show'), 50); // Small delay for transition
+                } else if (selectedGovernorate === 'باقي المحافظات') {
+                    deliveryNotesText.innerHTML = '<strong>مدة الشحن:</strong> من 5 أيام لأسبوع عمل.';
+                    deliveryNotesDiv.style.display = 'flex';
+                    setTimeout(() => deliveryNotesDiv.classList.add('show'), 50); // Small delay for transition
+                }
+            } else { // <--- NEW: If no governorate selected, ensure delivery method is also reset
+                deliveryMethodSelect.style.display = 'none';
+                deliveryMethodLabel.style.display = 'none';
+                deliveryMethodSelect.removeAttribute('required');
+                deliveryMethodSelect.removeAttribute('name');
+            }
+            updateTotal(); // Recalculate total
+        }
+
         function updateTotal() {
-            const deliverySelect = document.getElementById('delivery-options');
-            if (!deliverySelect) return;
+            let deliveryCost = 0;
+            // Get delivery cost only if a method is selected and the select is visible
+            // Check if deliveryMethodSelect has a 'name' attribute, meaning it's active
+            if (deliveryMethodSelect.name === 'نوع التوصيل' && deliveryMethodSelect.value) {
+                const selectedOption = deliveryMethodSelect.options[deliveryMethodSelect.selectedIndex];
+                deliveryCost = Number(selectedOption.dataset.cost) || 0;
+            }
+            
+            // Update the hidden input for form submission
+            document.getElementById('delivery-cost-hidden').value = deliveryCost;
 
-            const selectedOption = deliverySelect.options[deliverySelect.selectedIndex];
-            const deliveryCost = Number(selectedOption.dataset.cost) || 0;
             const totalPriceContainer = document.getElementById('total-price-container');
-
-            if (deliveryCost > 0) {
+            if (productsPrice > 0 || deliveryCost > 0) { // Show total if products exist or delivery cost is set
                 const total = productsPrice + deliveryCost;
                 document.getElementById('total-price-value').textContent = total;
                 document.getElementById('total-price-hidden').value = total;
@@ -210,12 +727,18 @@
                 alert('سلة التسوق فارغة!');
                 return;
             }
-            if (!document.getElementById('delivery-options').value) {
+            if (!governorateSelect.value) {
+                alert('الرجاء اختيار المحافظة أولاً.');
+                return;
+            }
+            // Check if delivery method is selected only if the delivery method select is visible (has a name attribute)
+            if (governorateSelect.value && deliveryMethodSelect.name === 'نوع التوصيل' && !deliveryMethodSelect.value) { 
                 alert('الرجاء اختيار طريقة التوصيل أولاً.');
                 return;
             }
             
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxvPzOa6paLV2sHRHRGmJhYrt5eO6bM3YNNI7vOoHMTBiUehWSZzWUi0vA2QIdWzTU/exec';
+            // هذا هو الرابط الذي يجب تحديثه برابط سكريبت Google Apps Script الخاص بك
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxvPzOa6paLV2sHRHRGmJhYrt5eO6bM3YNNI7vOoHMTBiUehWSZzWUi0vA2QIdWzTU/exec'; 
             const submitButton = form.querySelector('button[type="submit"]');
             const data = new FormData(form);
 
@@ -252,8 +775,20 @@
             productsPrice = 0;
             form.reset();
             updateCartDetails(); // This will clear the fields and update counts
+
+            // Reset delivery related fields
+            governorateSelect.value = ''; // Reset governorate select
+            deliveryMethodSelect.innerHTML = '<option value="" disabled selected>-- اختر طريقة التوصيل --</option>'; // Clear method select
+            deliveryMethodSelect.style.display = 'none';
+            deliveryMethodLabel.style.display = 'none';
+            deliveryNotesDiv.classList.remove('show');
+            deliveryNotesDiv.style.display = 'none';
+            deliveryMethodSelect.removeAttribute('name'); // <--- NEW: Ensure name is removed on reset
+
+            // Re-enable all "Add to Cart" buttons
             document.querySelectorAll('.add-to-cart-btn, #weekly-offer-btn').forEach(button => {
                 button.disabled = false;
+                button.removeAttribute('data-item-added'); // Remove added flag
                 if(button.id === 'weekly-offer-btn') {
                     button.innerHTML = '<i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة';
                 } else {
