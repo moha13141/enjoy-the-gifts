@@ -404,14 +404,14 @@
                 <button class="back-button" onclick="showMainPage()"><i class="fas fa-arrow-left"></i> العودة للرئيسية</button>
             </div>
             <div class="checkout-form">
-                <!-- IMPORTANT: Replace YOUR_WEB_APP_URL_HERE with your deployed Google Apps Script Web App URL -->
-                <form id="checkout-form-element" action="YOUR_WEB_APP_URL_HERE" method="POST" onsubmit="handleFormSubmission(event)">
+                <!-- تم تحديث action للفورم ليرسل البيانات إلى Google Apps Script -->
+                <form id="checkout-form-element" action="https://script.google.com/macros/s/AKfycbwMqhj68lLTH_UMMzLQ_Yl3eLiWXIs7yse554H24jWSu_zpyny30Fz3-iCuoJNHmheQ/exec" method="POST">
                     <p style="text-align:center; font-size:1.1rem; margin-bottom:25px;">برجاء ملء بياناتك وسنتواصل معك لتأكيد الطلب وتفاصيل التوصيل.</p>
                     
                     <label for="name"><i class="fas fa-user"></i> الاسم بالكامل:</label>
-                    <input type="text" id="name" name="الاسم الكامل" required>
+                    <input type="text" id="name" name="name" required> <!-- تم تغيير name إلى "name" -->
                     <label for="phone"><i class="fas fa-phone"></i> رقم الموبايل:</label>
-                    <input type="tel" id="phone" name="رقم الموبايل" required>
+                    <input type="tel" id="phone" name="phone" required> <!-- تم تغيير name إلى "phone" -->
                     
                     <!-- Products display moved here -->
                     <label><i class="fas fa-gift"></i> المنتجات المطلوبة:</label>
@@ -420,16 +420,16 @@
                         <div id="empty-products-message" class="empty-products-message">لا توجد منتجات في السلة.</div>
                     </div>
                     <!-- Hidden textarea for form submission -->
-                    <textarea id="order-details-hidden" name="المنتجات المطلوبة" style="display:none;" required readonly></textarea>
+                    <textarea id="order-details-hidden" name="products" style="display:none;" required readonly></textarea> <!-- تم تغيير name إلى "products" -->
                     <!-- End of moved section -->
 
                     <label for="address"><i class="fas fa-map-marker-alt"></i> العنوان بالتفصيل:</label>
-                    <input type="text" id="address" name="العنوان بالتفصيل" required placeholder="مثال: حدائق القبة، شارع ...، عمارة ...، شقة ...">
+                    <input type="text" id="address" name="address" required placeholder="مثال: حدائق القبة، شارع ...، عمارة ...، شقة ..."> <!-- تم تغيير name إلى "address" -->
                     <label for="location-link"><i class="fas fa-map-pin"></i> رابط موقعك على الخريطة (اختياري):</label>
-                    <input type="url" id="location-link" name="رابط الموقع" placeholder="انسخ رابط موقعك من خرائط جوجل هنا">
+                    <input type="url" id="location-link" name="siteLink" placeholder="انسخ رابط موقعك من خرائط جوجل هنا"> <!-- تم تغيير name إلى "siteLink" -->
                     
                     <label for="governorate-select"><i class="fas fa-building"></i> اختر المحافظة:</label>
-                    <select id="governorate-select" class="modern-select" name="المحافظة" onchange="populateDeliveryMethods()" required>
+                    <select id="governorate-select" class="modern-select" name="governorate" onchange="populateDeliveryMethods()" required>
                         <option value="" disabled selected>-- اختر المحافظة --</option>
                         <option value="cairo_giza">القاهرة والجيزة</option>
                         <option value="other_governorates">باقي المحافظات</option>
@@ -441,17 +441,26 @@
                         <span id="delivery-text"></span>
                     </div>
 
+                    <!-- حقل اختيار المدينة/المحافظة لباقي المحافظات -->
+                    <div class="delivery-city-select" style="display:none;">
+                        <label for="deliveryCitySelect">اختر المدينة/المحافظة:</label>
+                        <select id="deliveryCitySelect" class="modern-select" name="deliveryCity" onchange="updateTotal()"> <!-- تم إضافة name="deliveryCity" -->
+                            <option value="" disabled selected>-- اختر المدينة/المحافظة --</option>
+                            <!-- Options will be dynamically loaded here -->
+                        </select>
+                    </div>
+
                     <label for="delivery-method-select" id="delivery-method-label" style="display:none;"><i class="fas fa-truck"></i> طريقة التوصيل:</label>
-                    <!-- Changed name attribute to 'نوع التوصيل' for Cairo/Giza specific methods, 
-                         and it will be dynamically updated for other governorates -->
-                    <select id="delivery-method-select" class="modern-select" name="نوع التوصيل" onchange="updateTotal()" style="display:none;" required>
+                    <select id="delivery-method-select" class="modern-select" name="deliveryType" onchange="updateTotal()" style="display:none;" required> <!-- تم تغيير name إلى "deliveryType" -->
                         <option value="" disabled selected>-- اختر طريقة التوصيل --</option>
                     </select>
 
-                    <input type="hidden" id="products-price-hidden" name="سعر المنتجات">
-                    <input type="hidden" id="total-price-hidden" name="التكلفة الإجمالية">
-                    <!-- New hidden field for shipping cost -->
-                    <input type="hidden" id="shipping-cost-hidden" name="تكلفة الشحن">
+                    <!-- حقول مخفية لتكلفة المنتجات، التكلفة الإجمالية، وتكلفة الشحن -->
+                    <input type="hidden" id="products-price-hidden" name="productPrice"> <!-- تم تغيير name إلى "productPrice" -->
+                    <input type="hidden" id="total-price-hidden" name="totalCost"> <!-- تم تغيير name إلى "totalCost" -->
+                    <input type="hidden" id="deliveryCostHidden" name="shippingCost" value="0"> <!-- حقل جديد لتكلفة الشحن -->
+                    <input type="hidden" name="orderSource" value="سكريبت"> <!-- مصدر الطلب: سكريبت -->
+                    <input type="hidden" name="createdBy" value=""> <!-- منشئ الطلب: فارغ للموقع الأساسي -->
                     
                     <div id="total-price-container" style="display: none;">
                         <div class="total-price-display">
@@ -489,13 +498,14 @@
         const deliveryMethodLabel = document.getElementById('delivery-method-label');
         const deliveryNotesDiv = document.getElementById('delivery-notes');
         const deliveryNotesText = document.getElementById('delivery-text');
-        const shippingCostHidden = document.getElementById('shipping-cost-hidden'); // New hidden field for shipping cost
+        const deliveryCitySelectContainer = document.querySelector('.delivery-city-select'); // Container for the dynamic city select
+        const deliveryCitySelect = document.getElementById('deliveryCitySelect'); // The dynamic city select itself
 
         // Define all delivery options and their costs
         const deliveryOptionsData = {
             cairo_giza: [
-                { text: 'توصيل للمنزل (60 جنيه)', value: 'توصيل للمنزل', cost: 60 },
-                { text: 'أقرب محطة مترو (40 جنيه)', value: 'أقرب محطة مترو', cost: 40 }
+                { text: 'توصيل للمنزل (60 جنيه)', value: 'توصيل للمنزل', cost: 60 }, // تم تعديل value
+                { text: 'أقرب محطة مترو (40 جنيه)', value: 'أقرب محطة مترو', cost: 40 } // تم تعديل value
             ],
             other_governorates: [
                 { text: 'الإسكندرية: 90 جنيه', value: 'الإسكندرية', cost: 90 },
@@ -584,7 +594,7 @@
 
             // Update the hidden textarea for form submission
             if(orderDetailsHiddenTextarea) {
-                orderDetailsHiddenTextarea.value = cartItems.map(item => `${item.name} (${item.price} جنيه)`).join('\n'); // Use newline for vertical display in sheet
+                orderDetailsHiddenTextarea.value = cartItems.map(item => `${item.name} (${item.price} جنيه)`).join(' | '); // Use pipe for sheet readability
                 document.getElementById('products-price-hidden').value = productsPrice;
                 updateTotal(); // Update total price whenever cart changes
             }
@@ -597,7 +607,8 @@
         function addToCart(button, itemName, itemPrice) {
             // Check if item already exists in cart
             if (cartItems.some(item => item.name === itemName)) {
-                alert("هذا المنتج موجود بالفعل في السلة!");
+                // Use a custom alert/modal instead of window.alert
+                showCustomAlert("هذا المنتج موجود بالفعل في السلة!");
                 return;
             }
             // Add item with its original button reference
@@ -644,38 +655,30 @@
                 if (removedItem.originalButton.id === 'weekly-offer-btn') {
                     removedItem.originalButton.innerHTML = '<i class="fas fa-shopping-cart" style="margin-left: 8px;"></i> أضف العرض للسلة';
                 } else {
-                    removedItem.originalButton.innerHTML = 'أضف إلى السلة';
+                    removedItem.originalButton.innerText = 'أضف إلى السلة';
                 }
             }
             updateCartDetails(); // This will also call renderCartItems()
         }
         
         function populateDeliveryMethods() {
-            const selectedGovernorateGroup = governorateSelect.value;
+            const selectedGovernorate = governorateSelect.value;
             deliveryMethodSelect.innerHTML = '<option value="" disabled selected>-- اختر طريقة التوصيل --</option>'; // Clear existing options
-            
+            deliveryCitySelect.innerHTML = '<option value="" disabled selected>-- اختر المدينة/المحافظة --</option>'; // Clear city options
+
             // Hide notes and delivery method select/label initially
             deliveryNotesDiv.classList.remove('show'); 
             deliveryNotesDiv.style.display = 'none';
             deliveryMethodSelect.style.display = 'none';
             deliveryMethodLabel.style.display = 'none';
+            deliveryCitySelectContainer.style.display = 'none'; // Hide city select container
+            
             deliveryMethodSelect.removeAttribute('required'); // Remove required until populated
+            deliveryCitySelect.removeAttribute('required'); // Remove required for city select
 
-            // Reset the name attribute of deliveryMethodSelect to ensure correct data is sent
-            // If 'other_governorates' is selected, the selected value will go to 'المحافظة' field.
-            // If 'cairo_giza' is selected, the selected value will go to 'نوع التوصيل' field.
-            if (selectedGovernorateGroup === 'cairo_giza') {
-                deliveryMethodSelect.name = 'نوع التوصيل'; 
-            } else if (selectedGovernorateGroup === 'other_governorates') {
-                deliveryMethodSelect.name = 'المحافظة'; // For other governorates, the selected value is the governorate itself
-            } else {
-                deliveryMethodSelect.name = 'نوع التوصيل'; // Default
-            }
-
-
-            if (selectedGovernorateGroup) {
-                const options = deliveryOptionsData[selectedGovernorateGroup];
-                if (options) {
+            if (selectedGovernorate) {
+                if (selectedGovernorate === 'cairo_giza') {
+                    const options = deliveryOptionsData.cairo_giza;
                     options.forEach(option => {
                         const opt = document.createElement('option');
                         opt.value = option.value;
@@ -686,14 +689,25 @@
                     deliveryMethodSelect.style.display = 'block'; // Show method select
                     deliveryMethodLabel.style.display = 'block'; // Show method label
                     deliveryMethodSelect.setAttribute('required', 'required'); // Set required
-                }
-
-                // Display delivery notes with animation
-                if (selectedGovernorateGroup === 'cairo_giza') {
+                    
                     deliveryNotesText.innerHTML = '<strong>مدة التوصيل:</strong> خلال يوم أو يومين .';
                     deliveryNotesDiv.style.display = 'flex';
                     setTimeout(() => deliveryNotesDiv.classList.add('show'), 50); // Small delay for transition
-                } else if (selectedGovernorateGroup === 'other_governorates') {
+
+                } else if (selectedGovernorate === 'other_governorates') {
+                    const options = deliveryOptionsData.other_governorates;
+                    options.forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.dataset.cost = option.cost;
+                        opt.textContent = option.text;
+                        deliveryCitySelect.appendChild(opt); // Populate city select
+                    });
+                    deliveryCitySelectContainer.style.display = 'block'; // Show city select container
+                    deliveryCitySelect.setAttribute('required', 'required'); // Set required for city select
+                    // For other governorates, the delivery method select will be hidden
+                    // and the actual city selected will be the "delivery type" in the sheet logic
+                    
                     deliveryNotesText.innerHTML = '<strong>مدة الشحن:</strong> من 5 أيام لأسبوع .';
                     deliveryNotesDiv.style.display = 'flex';
                     setTimeout(() => deliveryNotesDiv.classList.add('show'), 50); // Small delay for transition
@@ -704,18 +718,26 @@
 
         function updateTotal() {
             let deliveryCost = 0;
-            // Get delivery cost only if a method is selected and the select is visible
-            if (deliveryMethodSelect.style.display === 'block' && deliveryMethodSelect.value) {
+            const selectedGovernorate = governorateSelect.value;
+
+            if (selectedGovernorate === 'cairo_giza' && deliveryMethodSelect.style.display === 'block' && deliveryMethodSelect.value) {
+                // For Cairo/Giza, cost comes from deliveryMethodSelect
                 const selectedOption = deliveryMethodSelect.options[deliveryMethodSelect.selectedIndex];
+                deliveryCost = Number(selectedOption.dataset.cost) || 0;
+            } else if (selectedGovernorate === 'other_governorates' && deliveryCitySelect.style.display === 'block' && deliveryCitySelect.value) {
+                // For other governorates, cost comes from deliveryCitySelect
+                const selectedOption = deliveryCitySelect.options[deliveryCitySelect.selectedIndex];
                 deliveryCost = Number(selectedOption.dataset.cost) || 0;
             }
             
-            // Update the hidden shipping cost field
-            shippingCostHidden.value = deliveryCost;
+            // Update the hidden shipping cost input
+            document.getElementById('deliveryCostHidden').value = deliveryCost;
 
             const totalPriceContainer = document.getElementById('total-price-container');
-            // Show total if products exist and province is selected
-            if (productsPrice > 0 && governorateSelect.value !== "") { 
+            // Show total if products exist and province/city is selected
+            if (productsPrice > 0 && (governorateSelect.value !== "" && 
+                                      (governorateSelect.value === 'cairo_giza' && deliveryMethodSelect.value) ||
+                                      (governorateSelect.value === 'other_governorates' && deliveryCitySelect.value) )) { 
                 const total = productsPrice + deliveryCost;
                 document.getElementById('total-price-value').textContent = total;
                 document.getElementById('total-price-hidden').value = total;
@@ -726,83 +748,85 @@
         }
 
         const form = document.getElementById('checkout-form-element');
-        form.addEventListener("submit", function handleFormSubmission(event) { // Renamed function for clarity
-            event.preventDefault(); // Prevent default form submission
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwMqhj68lLTH_UMMzLQ_Yl3eLiWXIs7yse554H24jWSu_zpyny30Fz3-iCuoJNHmheQ/exec"; // رابط الـ Web App الخاص بك
+
+        form.addEventListener("submit", async function handleSubmit(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للفورم
 
             if (cartItems.length === 0) {
-                alert('سلة التسوق فارغة!');
+                showCustomAlert('سلة التسوق فارغة!');
                 return;
             }
             if (!governorateSelect.value) {
-                alert('الرجاء اختيار المحافظة أولاً.');
+                showCustomAlert('الرجاء اختيار المحافظة أولاً.');
                 return;
             }
-            // Check if delivery method is selected only if the select is visible and required
-            if (deliveryMethodSelect.style.display === 'block' && !deliveryMethodSelect.value) { 
-                alert('الرجاء اختيار طريقة التوصيل أولاً.');
+            // التحقق من اختيار طريقة التوصيل أو المدينة لباقي المحافظات
+            if (governorateSelect.value === 'cairo_giza' && !deliveryMethodSelect.value) {
+                showCustomAlert('الرجاء اختيار طريقة التوصيل أولاً.');
+                return;
+            }
+            if (governorateSelect.value === 'other_governorates' && !deliveryCitySelect.value) {
+                showCustomAlert('الرجاء اختيار المدينة/المحافظة أولاً.');
                 return;
             }
             
             const submitButton = form.querySelector('button[type="submit"]');
-            
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ...جاري الإرسال';
 
-            // Collect form data
-            const formData = new FormData(form);
-            const object = {};
-            formData.forEach((value, key) => {
-                object[key] = value;
-            });
+            const formData = new FormData(this);
+            const data = {};
 
-            // Handle 'المحافظة' and 'نوع التوصيل' based on selection
-            if (governorateSelect.value === 'cairo_giza') {
-                object['المحافظة'] = 'القاهرة والجيزة';
-                // 'نوع التوصيل' is already correctly set by the deliveryMethodSelect.name
-            } else if (governorateSelect.value === 'other_governorates') {
-                object['المحافظة'] = deliveryMethodSelect.value; // The selected value is the governorate
-                object['نوع التوصيل'] = ''; // Clear 'نوع التوصيل' for other governorates if not applicable
-            } else {
-                // Default case, should ideally not be reached if required validation works
-                object['المحافظة'] = '';
-                object['نوع التوصيل'] = '';
+            // جمع البيانات من حقول الـ name بشكل مباشر
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
             }
 
+            // معالجة حقل المنتجات المطلوبة (من cartItems)
+            data['products'] = cartItems.map(item => `${item.name} (${item.price} جنيه)`).join(' | ');
 
-            // Ensure hidden fields are correctly populated before sending
-            object['المنتجات المطلوبة'] = orderDetailsHiddenTextarea.value;
-            object['سعر المنتجات'] = document.getElementById('products-price-hidden').value;
-            object['التكلفة الإجمالية'] = document.getElementById('total-price-hidden').value;
-            object['تكلفة الشحن'] = shippingCostHidden.value; // Add shipping cost to the object
+            // جمع قيم التكلفة المعروضة (والتي يجب أن تكون محدثة في الـ hidden inputs أيضاً)
+            data['productPrice'] = document.getElementById('products-price-hidden').value;
+            data['totalCost'] = document.getElementById('total-price-hidden').value;
+            data['shippingCost'] = document.getElementById('deliveryCostHidden').value; // تأكد من أن هذا الحقل يتم تحديثه في updateTotal()
 
-            // Send data using fetch API
-            fetch(form.action, { // Use form.action to get the URL
-                method: 'POST',
-                body: JSON.stringify(object), // Send as JSON
-                headers: {
-                    'Content-Type': 'application/json' // Important for Apps Script to parse as JSON
-                }
-            })
-            .then(response => response.json()) // Parse JSON response from Apps Script
-            .then(data => {
-                if (data.result === 'success') {
+            // معالجة قيمة المحافظة لترسل القيمة الصحيحة:
+            // إذا كان "باقي المحافظات" تم اختيارها، أرسل اسم المدينة المختارة من القائمة الثانية
+            // وإلا، أرسل قيمة المحافظة من القائمة الأولى
+            if (governorateSelect.value === 'other_governorates') {
+                data['governorate'] = deliveryCitySelect.value; // اسم المدينة المختارة فعلياً
+                data['deliveryType'] = 'باقي المحافظات'; // نوع التوصيل سيكون "باقي المحافظات" كما طلب
+            } else {
+                data['governorate'] = governorateSelect.value === 'cairo_giza' ? 'القاهرة والجيزة' : governorateSelect.value; // "القاهرة والجيزة"
+                // deliveryType هنا ستكون القيمة من deliveryMethodSelect.value
+            }
+            // مصدر الطلب ومنشئه يتم إرسالهم من الـ hidden inputs بالفعل
+
+            try {
+                const response = await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    body: new URLSearchParams(data) // مهم: إرسال البيانات كـ x-www-form-urlencoded
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
                     const name = document.getElementById('name').value;
                     const phone = document.getElementById('phone').value;
                     document.getElementById('confirmation-message').innerHTML = `شكرًا لك يا <strong>${name}</strong>!<br>تم استلام طلبك وسنتواصل معك قريبًا على رقم <strong>${phone}</strong> لتأكيد التفاصيل.`;
                     showConfirmationModal();
                 } else {
-                    alert('حدث خطأ أثناء إرسال الطلب: ' + data.message);
-                    console.error('Apps Script Error:', data.message);
+                    showCustomAlert('حدث خطأ أثناء إرسال الطلب: ' + result.message);
+                    console.error('Error submitting form:', result.message);
                 }
-            })
-            .catch(error => {
-                alert('حدث خطأ في الاتصال بالخادم: ' + error.message);
-                console.error('Network Error:', error);
-            })
-            .finally(() => {
+            } catch (error) {
+                showCustomAlert('حدث خطأ في الاتصال بالخادم. يرجى المحاولة مرة أخرى.');
+                console.error('Network or server error:', error);
+            } finally {
                 submitButton.disabled = false;
                 submitButton.innerHTML = '<i class="fas fa-check-circle"></i> تأكيد الطلب الآن';
-            });
+            }
         });
         
         function showConfirmationModal() { document.getElementById('confirmation-modal').style.display = 'flex'; }
@@ -819,9 +843,10 @@
             deliveryMethodSelect.innerHTML = '<option value="" disabled selected>-- اختر طريقة التوصيل --</option>'; // Clear method select
             deliveryMethodSelect.style.display = 'none';
             deliveryMethodLabel.style.display = 'none';
+            deliveryCitySelectContainer.style.display = 'none'; // Hide city select container
+            deliveryCitySelect.innerHTML = '<option value="" disabled selected>-- اختر المدينة/المحافظة --</option>'; // Clear city select options
             deliveryNotesDiv.classList.remove('show');
             deliveryNotesDiv.style.display = 'none';
-            shippingCostHidden.value = 0; // Reset shipping cost
 
             // Re-enable all "Add to Cart" buttons
             document.querySelectorAll('.add-to-cart-btn, #weekly-offer-btn').forEach(button => {
@@ -833,6 +858,20 @@
                 }
             });
             showMainPage(null, null);
+        }
+
+        // Custom alert modal (instead of window.alert)
+        function showCustomAlert(message) {
+            const customAlertModal = document.getElementById('suggestion-modal'); // Reusing suggestion modal for simplicity
+            const customAlertText = document.getElementById('suggestion-text');
+            const customAlertIcon = customAlertModal.querySelector('.icon i');
+            const customAlertTitle = customAlertModal.querySelector('h2');
+
+            customAlertIcon.className = 'fas fa-exclamation-circle'; // Change icon to warning
+            customAlertIcon.style.color = 'var(--danger-color)'; // Red color for warning
+            customAlertTitle.innerText = 'خطأ!'; // Change title
+            customAlertText.innerHTML = message;
+            customAlertModal.style.display = 'flex';
         }
 
         function initImageLightbox() {
@@ -877,6 +916,14 @@
         function showSuggestion(message) {
             const suggestionModal = document.getElementById('suggestion-modal');
             const suggestionText = document.getElementById('suggestion-text');
+            const suggestionIcon = suggestionModal.querySelector('.icon i');
+            const suggestionTitle = suggestionModal.querySelector('h2');
+
+            // Reset to default suggestion style
+            suggestionIcon.className = 'fas fa-lightbulb';
+            suggestionIcon.style.color = 'var(--primary-color)';
+            suggestionTitle.innerText = 'اقتراحنا لك!';
+
             suggestionText.innerHTML = message;
             suggestionModal.style.display = 'flex';
         }
