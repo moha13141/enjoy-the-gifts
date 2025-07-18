@@ -813,7 +813,7 @@
 
                 if (result.status === 'success') {
                     const name = document.getElementById('name').value;
-                    const phone = document.getElementById('phone').value;
+                    let phone = document.getElementById('phone').value; // يبقى string
                     document.getElementById('confirmation-message').innerHTML = `شكرًا لك يا <strong>${name}</strong>!<br>تم استلام طلبك وسنتواصل معك قريبًا على رقم <strong>${phone}</strong> لتأكيد التفاصيل.`;
                     showConfirmationModal();
                 } else {
@@ -948,6 +948,7 @@
                 imageLightboxModal.style.display = 'none';
             }
         }
+      
     </script>
 </body>
 </html>
